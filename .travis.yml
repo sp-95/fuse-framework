@@ -1,26 +1,49 @@
-# Config file for automatic testing at travis-ci.org
-
+dist: xenial
 language: python
 python:
   - 3.8
   - 3.7
-  - 3.6
-  - 3.5
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox-travis
+env:
+  global:
+    - POETRY_VIRTUALENVS_CREATE=false
 
-# command to run tests, e.g. python setup.py test
+cache:
+  pip: true
+  directories:
+    - "$HOME/.cache/pypoetry"
+    - "$HOME/.cache/pre-commit"
+
+before_install:
+  - pip install pip -U
+  - pip install poetry -U
+install:
+  - poetry update --no-interaction # Encountering RecursionError on install only
+  - poetry install --no-interaction
+
+before_script: poetry add tox-travis --dev
 script: tox
 
-# deploy new versions to PyPI
-deploy:
-  provider: pypi
-  distributions: sdist bdist_wheel
-  user: audreyr
-  password:
-    secure: PLEASE_REPLACE_ME
-  on:
-    tags: true
-    repo: audreyr/python_boilerplate
-    python: 3.8
+jobs:
+  include:
+    - stage: deploy
+      name: Deploy to GitHub Pages
+      script: make docs
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: docs/_build
+        keep_history: true
+        on:
+          branch: fuse
+    - stage: deploy
+      name: Deploy to PyPi
+      before_deploy: poetry config pypi-token.pypi $PYPI_TOKEN
+      deploy:
+        provider: script
+        script: poetry publish --build
+        skip_cleanup: true
+        on:
+          tags: true
+          branch: fuse

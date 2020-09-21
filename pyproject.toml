@@ -29,6 +29,8 @@ pytest = "*"
 tox = "*"
 cookiecutter = "*"
 pytest-cookies = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
 PyYAML = "*"
 
 [build-system]

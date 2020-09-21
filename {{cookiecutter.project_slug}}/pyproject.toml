@@ -43,6 +43,8 @@ pytest = "*"
 tox = "*"
 coverage = "*"
 flake8 = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
 
 {% if cookiecutter.command_line_interface|lower == 'click' -%}
 [tool.poetry.scripts]
