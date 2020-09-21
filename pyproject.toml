@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "fuse-standard"
+version = "0.1.0"
+description = "FuseMachines Python Standardization"
+authors = ["Shashanka Prajapati <shashanka@fusemachines.com>"]
+license = "BSD"
+readme = "README.rst"
+repository = "https://github.com/sp-fm/fuse-standard"
+documentation = "https://sp-fm.github.io/fuse-standard"
+keywords=['cookiecutter', 'template', 'package']
+classifiers=[
+    'Development Status :: 4 - Beta',
+    'Environment :: Console',
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    'License :: OSI Approved :: BSD License',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Topic :: Software Development',
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+tox = "*"
+cookiecutter = "*"
+pytest-cookies = "*"
+PyYAML = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0a5"]
+build-backend = "poetry.core.masonry.api"
