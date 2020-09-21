@@ -39,6 +39,7 @@ jobs:
           branch: fuse
     - stage: deploy
       name: Deploy to PyPi
+      if: tag IS present
       before_deploy: poetry config pypi-token.pypi $PYPI_TOKEN
       deploy:
         provider: script
