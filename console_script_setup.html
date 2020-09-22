@@ -36,7 +36,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Travis/PyPI Setup" href="travis_pypi_setup.html" /> 
+    <link rel="next" title="Contributing" href="contributing.html" />
+    <link rel="prev" title="PyPI Setup" href="pypi_setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -58,10 +59,6 @@
 
           
             
-            
-              <div class="version">
-                0.1.0
-              </div>
             
           
 
@@ -86,7 +83,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="readme.html">Cookiecutter PyPackage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">FuseMachines Standard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pypi_release_checklist.html">PyPI Release Checklist</a></li>
 </ul>
@@ -94,14 +91,17 @@
 <li class="toctree-l1"><a class="reference internal" href="prompts.html">Prompts</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="travis_pypi_setup.html">Travis/PyPI Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pypi_setup.html">PyPI Setup</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Console Script Setup</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#how-it-works">How It Works</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#known-issues">Known Issues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#more-details">More Details</a></li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
             
@@ -169,40 +169,25 @@
             
   <div class="section" id="console-script-setup">
 <span id="id1"></span><h1>Console Script Setup<a class="headerlink" href="#console-script-setup" title="Permalink to this headline">¶</a></h1>
-<p>Optionally, your package can include a console script using Click or argparse (Python 3.2+).</p>
+<p>Your package includes a console script using Click.</p>
 <div class="section" id="how-it-works">
 <h2>How It Works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>If the ‘command_line_interface’ option is set to [‘click’] or [‘argparse’] during setup, cookiecutter will
-add a file ‘cli.py’ in the project_slug subdirectory. An entry point is added to
-setup.py that points to the main function in cli.py.</p>
+<p>Cookiecutter will add a file ‘cli.py’ in the project_slug subdirectory. An entry
+point is added to pyproject.toml that points to the main function in cli.py.</p>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <p>To use the console script in development:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -e projectdir
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry install
 </pre></div>
 </div>
-<p>‘projectdir’ should be the top level project directory with the setup.py file</p>
+<p>‘projectdir’ should be the top level project directory with the pyproject.toml file</p>
 <p>The script will be generated with output for no arguments and –help.</p>
 <dl class="option-list">
 <dt><kbd><span class="option">--help</span></kbd></dt>
 <dd><p>show help menu and exit</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="known-issues">
-<h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
-<p>Using Click, installing the project in a development environment using:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py develop
-</pre></div>
-</div>
-<p>will not set up the entry point correctly. This is a known issue with Click.
-The following will work as expected:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py install
-pip install mypackage
-</pre></div>
-</div>
-<p>With ‘mypackage’ adjusted to the specific project.</p>
 </div>
 <div class="section" id="more-details">
 <h2>More Details<a class="headerlink" href="#more-details" title="Permalink to this headline">¶</a></h2>
@@ -219,8 +204,10 @@ pip install mypackage
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="travis_pypi_setup.html" class="btn btn-neutral float-left" title="Travis/PyPI Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="pypi_setup.html" class="btn btn-neutral float-left" title="PyPI Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

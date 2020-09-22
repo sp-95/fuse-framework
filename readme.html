@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cookiecutter PyPackage &mdash; fuse-standard 0.1.0 documentation</title>
+  <title>FuseMachines Standard &mdash; fuse-standard 0.1.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tutorial" href="tutorial.html" />
-    <link rel="prev" title="Welcome to cookiecutter-pypackage’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Welcome to FuseMachines Standard’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -59,10 +59,6 @@
 
           
             
-            
-              <div class="version">
-                0.1.0
-              </div>
             
           
 
@@ -87,15 +83,9 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Cookiecutter PyPackage</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FuseMachines Standard</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#quickstart">Quickstart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#not-exactly-what-you-want">Not Exactly What You Want?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#similar-cookiecutter-templates">Similar Cookiecutter Templates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fork-this-create-your-own">Fork This / Create Your Own</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#or-submit-a-pull-request">Or Submit a Pull Request</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
@@ -105,8 +95,12 @@
 <li class="toctree-l1"><a class="reference internal" href="prompts.html">Prompts</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="travis_pypi_setup.html">Travis/PyPI Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pypi_setup.html">PyPI Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="console_script_setup.html">Console Script Setup</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
             
@@ -153,7 +147,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Cookiecutter PyPackage</li>
+      <li>FuseMachines Standard</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,92 +166,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cookiecutter-pypackage">
-<span id="readme"></span><h1>Cookiecutter PyPackage<a class="headerlink" href="#cookiecutter-pypackage" title="Permalink to this headline">¶</a></h1>
-<a class="reference external image-reference" href="https://pyup.io/repos/github/audreyfeldroy/cookiecutter-pypackage/"><img alt="Updates" src="https://pyup.io/repos/github/audreyfeldroy/cookiecutter-pypackage/shield.svg" /></a>
-<a class="reference external image-reference" href="https://travis-ci.org/github/audreyfeldroy/cookiecutter-pypackage"><img alt="Build Status" src="https://travis-ci.org/audreyfeldroy/cookiecutter-pypackage.svg?branch=master" /></a>
-<a class="reference external image-reference" href="https://cookiecutter-pypackage.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/cookiecutter-pypackage/badge/?version=latest" /></a>
-<p><a class="reference external" href="https://github.com/cookiecutter/cookiecutter">Cookiecutter</a> template for a Python package.</p>
+  <div class="section" id="fusemachines-standard">
+<span id="readme"></span><h1>FuseMachines Standard<a class="headerlink" href="#fusemachines-standard" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="https://travis-ci.com/github/sp-fm/fuse-standard"><img alt="Travis CI Build Status" src="https://travis-ci.com/sp-fm/fuse-standard.svg?branch=fuse" /></a>
+<p><a class="reference external" href="https://github.com/cookiecutter/cookiecutter">Cookiecutter</a> template for a standard FuseMachines Python package.</p>
 <ul class="simple">
-<li><p>GitHub repo: <a class="reference external" href="https://github.com/audreyfeldroy/cookiecutter-pypackage/">https://github.com/audreyfeldroy/cookiecutter-pypackage/</a></p></li>
-<li><p>Documentation: <a class="reference external" href="https://cookiecutter-pypackage.readthedocs.io/">https://cookiecutter-pypackage.readthedocs.io/</a></p></li>
+<li><p>GitHub repo: <a class="reference external" href="https://github.com/sp-fm/fuse-standard">https://github.com/sp-fm/fuse-standard</a></p></li>
+<li><p>Documentation: <a class="reference external" href="https://sp-fm.github.io/fuse-standard/">https://sp-fm.github.io/fuse-standard/</a></p></li>
 <li><p>Free software: BSD license</p></li>
 </ul>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Testing setup with <code class="docutils literal notranslate"><span class="pre">unittest</span></code> and <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">test</span></code> or <code class="docutils literal notranslate"><span class="pre">pytest</span></code></p></li>
+<li><p>Testing setup with <code class="docutils literal notranslate"><span class="pre">pytest</span></code></p></li>
 <li><p><a class="reference external" href="http://travis-ci.org/">Travis-CI</a>: Ready for Travis Continuous Integration testing</p></li>
-<li><p><a class="reference external" href="http://testrun.org/tox/">Tox</a> testing: Setup to easily test for Python 3.5, 3.6, 3.7, 3.8</p></li>
+<li><p><a class="reference external" href="http://testrun.org/tox/">Tox</a> testing: Setup to easily test for Python 3.7, 3.8</p></li>
 <li><p><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> docs: Documentation ready for generation with, for example, <a class="reference external" href="https://readthedocs.io/">Read the Docs</a></p></li>
-<li><p><a class="reference external" href="https://github.com/c4urself/bump2version">bump2version</a>: Pre-configured version bumping with a single command</p></li>
+<li><p>Command line interface using Click</p></li>
 <li><p>Auto-release to <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a> when you push a new tag to master (optional)</p></li>
-<li><p>Command line interface using Click (optional)</p></li>
+<li><p>Dependency tracking using <a class="reference external" href="https://python-poetry.org/docs/">poetry</a></p></li>
+<li><p>Linting provided by <a class="reference external" href="https://pypi.org/project/flake8/">flake8</a> [executed by Tox]</p></li>
+<li><p>Git hooks by <a class="reference external" href="https://github.com/pre-commit/pre-commit-hooks">pre_commit_hooks</a></p></li>
 </ul>
 </div>
 <div class="section" id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
 <p>Install the latest Cookiecutter if you haven’t installed it yet (this requires
 Cookiecutter 1.4.0 or higher):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">cookiecutter</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install -U cookiecutter
 </pre></div>
 </div>
 <p>Generate a Python package project:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cookiecutter</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">audreyfeldroy</span><span class="o">/</span><span class="n">cookiecutter</span><span class="o">-</span><span class="n">pypackage</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cookiecutter https://github.com/sp-fm/fuse-standard.git
 </pre></div>
 </div>
 <p>Then:</p>
 <ul class="simple">
 <li><p>Create a repo and put it there.</p></li>
 <li><p>Add the repo to your <a class="reference external" href="http://travis-ci.org/">Travis-CI</a> account.</p></li>
-<li><p>Install the dev requirements into a virtualenv. (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements_dev.txt</span></code>)</p></li>
-<li><p><a class="reference external" href="https://packaging.python.org/tutorials/packaging-projects/#uploading-the-distribution-archives">Register</a> your project with PyPI.</p></li>
-<li><p>Run the Travis CLI command <code class="docutils literal notranslate"><span class="pre">travis</span> <span class="pre">encrypt</span> <span class="pre">--add</span> <span class="pre">deploy.password</span></code> to encrypt your PyPI password in Travis config
-and activate automated deployment on PyPI when you push a new tag to master branch.</p></li>
-<li><p>Add the repo to your <a class="reference external" href="https://readthedocs.io/">Read the Docs</a> account + turn on the Read the Docs service hook.</p></li>
+<li><p>Install the dev requirements into a virtualenv. (<code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code>)</p></li>
 <li><p>Release your package by pushing a new tag to master.</p></li>
-<li><p>Add a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file that specifies the packages you will need for
-your project and their versions. For more info see the <a class="reference external" href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">pip docs for requirements files</a>.</p></li>
-<li><p>Activate your project on <a class="reference external" href="https://pyup.io/">pyup.io</a>.</p></li>
 </ul>
-<p>For more details, see the <a class="reference external" href="https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html">cookiecutter-pypackage tutorial</a>.</p>
-</div>
-<div class="section" id="not-exactly-what-you-want">
-<h2>Not Exactly What You Want?<a class="headerlink" href="#not-exactly-what-you-want" title="Permalink to this headline">¶</a></h2>
-<p>Don’t worry, you have options:</p>
-<div class="section" id="similar-cookiecutter-templates">
-<h3>Similar Cookiecutter Templates<a class="headerlink" href="#similar-cookiecutter-templates" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/Nekroze/cookiecutter-pypackage">Nekroze/cookiecutter-pypackage</a>: A fork of this with a PyTest test runner,
-strict flake8 checking with Travis/Tox, and some docs and <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> differences.</p></li>
-<li><p><a class="reference external" href="https://github.com/tony/cookiecutter-pypackage-pythonic">tony/cookiecutter-pypackage-pythonic</a>: Fork with py2.7+3.3 optimizations.
-Flask/Werkzeug-style test runner, <code class="docutils literal notranslate"><span class="pre">_compat</span></code> module and module/doc conventions.
-See <code class="docutils literal notranslate"><span class="pre">README.rst</span></code> or the <a class="reference external" href="https://github.com/tony/cookiecutter-pypackage-pythonic/compare/audreyr:master...master">github comparison view</a> for exhaustive list of
-additions and modifications.</p></li>
-<li><p><a class="reference external" href="https://github.com/ardydedase/cookiecutter-pypackage">ardydedase/cookiecutter-pypackage</a>: A fork with separate requirements files rather than a requirements list in the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file.</p></li>
-<li><p><a class="reference external" href="https://github.com/lgiordani/cookiecutter-pypackage">lgiordani/cookiecutter-pypackage</a>: A fork of Cookiecutter that uses <a class="reference external" href="https://github.com/lgiordani/punch">Punch</a> instead of <a class="reference external" href="https://github.com/c4urself/bump2version">bump2version</a> and with separate requirements files.</p></li>
-<li><p><a class="reference external" href="https://github.com/briggySmalls/cookiecutter-pypackage">briggySmalls/cookiecutter-pypackage</a>: A fork using <a class="reference external" href="https://python-poetry.org/">Poetry</a> for neat package management and deployment, with linting, formatting, no makefiles and more.</p></li>
-<li><p>Also see the <a class="reference external" href="https://github.com/audreyr/cookiecutter-pypackage/network">network</a> and <a class="reference external" href="https://github.com/audreyr/cookiecutter-pypackage/network/members">family tree</a> for this repo. (If you find
-anything that should be listed here, please add it and send a pull request!)</p></li>
-</ul>
-</div>
-<div class="section" id="fork-this-create-your-own">
-<h3>Fork This / Create Your Own<a class="headerlink" href="#fork-this-create-your-own" title="Permalink to this headline">¶</a></h3>
-<p>If you have differences in your preferred setup, I encourage you to fork this
-to create your own version. Or create your own; it doesn’t strictly have to
-be a fork.</p>
-<ul class="simple">
-<li><p>Once you have your own version working, add it to the Similar Cookiecutter
-Templates list above with a brief description.</p></li>
-<li><p>It’s up to you whether or not to rename your fork/own version. Do whatever
-you think sounds good.</p></li>
-</ul>
-</div>
-<div class="section" id="or-submit-a-pull-request">
-<h3>Or Submit a Pull Request<a class="headerlink" href="#or-submit-a-pull-request" title="Permalink to this headline">¶</a></h3>
-<p>I also accept pull requests on this, if they’re small, atomic, and if they
-make my own packaging experience better.</p>
-</div>
+<p>For more details, see the <a class="reference external" href="https://sp-fm.github.io/fuse-standard/tutorial.html">fuse-standard tutorial</a>.</p>
 </div>
 </div>
 
@@ -272,7 +222,7 @@ make my own packaging experience better.</p>
         <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to cookiecutter-pypackage’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to FuseMachines Standard’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
