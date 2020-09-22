@@ -37,8 +37,5 @@ The following package configuration options set up different features for your p
 use_pypi_deployment_with_travis
     Whether to use PyPI deployment with `Travis <https://travis-ci.org/>`_.
 
-command_line_interface
-    Whether to create a console script using Click. Console script entry point will match the project_slug. Options: ['Click', 'Argparse', 'No command-line interface']
-
 open_source_license
     Choose a `license <https://choosealicense.com/>`_. Options: [1. MIT License, 2. BSD license, 3. ISC license, 4. Apache Software License 2.0, 5. GNU General Public License v3, 6. Not open source]
