@@ -12,15 +12,16 @@ To install {{ cookiecutter.project_name }}, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install {{ cookiecutter.project_slug }}
+    $ poetry add {{ cookiecutter.project_slug }}
 
-This is the preferred method to install {{ cookiecutter.project_name }}, as it will always install the most recent stable release.
+This is the preferred method to install {{ cookiecutter.project_name }}, as it
+will always install the most recent stable release.
 
-If you don't have `pip`_ installed, this `Python installation guide`_ can guide
-you through the process.
+If you don't have `poetry`_ installed, this `Poetry installation guide`_ can
+guide you through the process.
 
-.. _pip: https://pip.pypa.io
-.. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
+.. _poetry: https://python-poetry.org/
+.. _Poetry installation guide: https://python-poetry.org/docs/#installation
 
 
 From sources
@@ -44,8 +45,7 @@ Once you have a copy of the source, you can install it with:
 
 .. code-block:: console
 
-    $ python setup.py install
-
+    $ poetry install
 
 .. _Github repo: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
 .. _tarball: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/tarball/master
