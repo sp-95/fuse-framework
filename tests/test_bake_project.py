@@ -111,26 +111,6 @@ def test_bake_with_apostrophe_and_run_tests(cookies):
         assert run_inside_dir('poetry run pytest', str(result.project)) == 0
 
 
-# def test_bake_and_run_travis_pypi_setup(cookies):
-#     # given:
-#     with bake_in_temp_dir(cookies) as result:
-#         project_path = str(result.project)
-#
-#         # when:
-#         travis_setup_cmd = ('python travis_pypi_setup.py'
-#                             ' --repo audreyr/cookiecutter-pypackage'
-#                             ' --password invalidpass')
-#         run_inside_dir(travis_setup_cmd, project_path)
-#         # then:
-#         result_travis_config = yaml.load(
-#             result.project.join(".travis.yml").open()
-#         )
-#         min_size_of_encrypted_password = 50
-#         assert len(
-#             result_travis_config["deploy"]["password"]["secure"]
-#         ) > min_size_of_encrypted_password
-
-
 def test_bake_without_travis_pypi_setup(cookies):
     with bake_in_temp_dir(
         cookies,
@@ -185,24 +165,3 @@ def test_bake_not_open_source(cookies):
         assert 'pyproject.toml' in found_toplevel_files
         assert 'LICENSE' not in found_toplevel_files
         assert 'License' not in result.project.join('README.rst').read()
-
-
-# def test_project_with_hyphen_in_module_name(cookies):
-#     result = cookies.bake(
-#         extra_context={'project_name': 'something-with-a-dash'}
-#     )
-#     assert result.project is not None
-#     project_path = str(result.project)
-#
-#     # when:
-#     travis_setup_cmd = ('python travis_pypi_setup.py'
-#                         ' --repo audreyr/cookiecutter-pypackage'
-#                         ' --password invalidpass')
-#     run_inside_dir(travis_setup_cmd, project_path)
-#
-#     # then:
-#     result_travis_config = yaml.load(
-#         open(os.path.join(project_path, ".travis.yml"))
-#     )
-#     assert "secure" in result_travis_config["deploy"]["password"],\
-#         "missing password config in .travis.yml"

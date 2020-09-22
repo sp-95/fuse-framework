@@ -190,6 +190,5 @@ committed (including an entry in CHANGELOG.rst). Then run:
 
 Travis will then deploy to PyPI if tests pass.
 
-.. cookiecutter: https://github.com/audreyr/cookiecutter-pypackage
 .. poetry: https://python-poetry.org/docs/
 .. git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
