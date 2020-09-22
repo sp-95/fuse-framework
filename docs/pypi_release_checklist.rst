@@ -1,40 +1,29 @@
 PyPI Release Checklist
 ======================
 
-Before Your First Release
--------------------------
-
-#. Register the package on PyPI:
-
-    .. code-block:: bash
-
-        python setup.py register
-
-#. Visit PyPI to make sure it registered.
-
 For Every Release
 -------------------
 
-#. Update HISTORY.rst
+#. Update CHANGELOG.rst
 
 #. Commit the changes:
 
     .. code-block:: bash
 
-        git add HISTORY.rst
+        git add CHANGELOG.rst
         git commit -m "Changelog for upcoming release 0.1.1."
 
 #. Update version number (can also be patch or major)
 
     .. code-block:: bash
 
-        bump2version minor
+        poetry version minor
 
 #. Install the package again for local development, but with the new version number:
 
     .. code-block:: bash
 
-        python setup.py develop
+        poetry install
 
 #. Run the tests:
 
@@ -63,16 +52,7 @@ For Every Release
         .. code-block:: bash
 
             pip install readme_renderer
-            python setup.py check -r -s
+            # Replace PROBLEM.rst with the name of the file you are having trouble with
+            python -m readme_renderer PROBLEM.rst >/dev/null
 
 #. Edit the release on GitHub (e.g. https://github.com/audreyr/cookiecutter/releases). Paste the release notes into the release's release page, and come up with a title for the release.
-
-About This Checklist
---------------------
-
-This checklist is adapted from:
-
-* https://gist.github.com/audreyr/5990987
-* https://gist.github.com/audreyr/9f1564ea049c14f682f4
-
-It assumes that you are using all features of Cookiecutter PyPackage.
