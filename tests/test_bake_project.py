@@ -1,15 +1,13 @@
-from contextlib import contextmanager
-import shlex
-import os
-import sys
-import subprocess
-import yaml
 import datetime
+import os
+import shlex
+import subprocess
+import sys
+from contextlib import contextmanager
+
+import pytest
+import yaml
 from cookiecutter.utils import rmtree
-
-from click.testing import CliRunner
-
-import importlib
 
 
 @contextmanager
@@ -84,31 +82,16 @@ def test_bake_with_defaults(cookies):
         assert 'tests' in found_toplevel_files
 
 
-def test_bake_and_run_tests(cookies):
-    with bake_in_temp_dir(cookies) as result:
+@pytest.mark.parametrize("extra_context", [
+    {},
+    {'full_name': 'name "quote" name'},
+    {'full_name': "O'connor"}
+])
+def test_bake_and_run_tests(cookies, extra_context):
+    with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
         assert result.project.isdir()
         assert run_inside_dir('poetry run pytest', str(result.project)) == 0
         print("test_bake_and_run_tests path", str(result.project))
-
-
-def test_bake_withspecialchars_and_run_tests(cookies):
-    """Ensure that a `full_name` with double quotes does not break setup.py"""
-    with bake_in_temp_dir(
-        cookies,
-        extra_context={'full_name': 'name "quote" name'}
-    ) as result:
-        assert result.project.isdir()
-        assert run_inside_dir('poetry run pytest', str(result.project)) == 0
-
-
-def test_bake_with_apostrophe_and_run_tests(cookies):
-    """Ensure that a `full_name` with apostrophes does not break setup.py"""
-    with bake_in_temp_dir(
-        cookies,
-        extra_context={'full_name': "O'connor"}
-    ) as result:
-        assert result.project.isdir()
-        assert run_inside_dir('poetry run pytest', str(result.project)) == 0
 
 
 def test_bake_without_travis_pypi_setup(cookies):
@@ -137,23 +120,23 @@ def test_make_help(cookies):
                 output
 
 
-def test_bake_selecting_license(cookies):
-    license_strings = {
-        'MIT license': 'MIT ',
-        'BSD license': 'Redistributions of source code must retain the ' +
-                       'above copyright notice, this',
-        'ISC license': 'ISC License',
-        'Apache Software License 2.0':
-            'Licensed under the Apache License, Version 2.0',
-        'GNU General Public License v3': 'GNU GENERAL PUBLIC LICENSE',
-    }
-    for license, target_string in license_strings.items():
-        with bake_in_temp_dir(
-            cookies,
-            extra_context={'open_source_license': license}
-        ) as result:
-            assert target_string in result.project.join('LICENSE').read()
-            assert license in result.project.join('pyproject.toml').read()
+@pytest.mark.parametrize("license_info", [
+    ('MIT license', 'MIT '),
+    ('BSD license', 'Redistributions of source code must retain the above' +
+     ' copyright notice, this'),
+    ('ISC license', 'ISC License'),
+    ('Apache Software License 2.0', 'Licensed under the Apache License,' +
+     ' Version 2.0'),
+    ('GNU General Public License v3', 'GNU GENERAL PUBLIC LICENSE'),
+])
+def test_bake_selecting_license(cookies, license_info):
+    license, target_string = license_info
+    with bake_in_temp_dir(
+        cookies,
+        extra_context={'open_source_license': license}
+    ) as result:
+        assert target_string in result.project.join('LICENSE').read()
+        assert license in result.project.join('pyproject.toml').read()
 
 
 def test_bake_not_open_source(cookies):

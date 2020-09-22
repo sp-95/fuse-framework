@@ -16,9 +16,9 @@ Step 1: Install Cookiecutter
 
 Install cookiecutter:
 
-    .. code-block:: bash
+.. code-block:: console
 
-        pip install --user cookiecutter
+    $ pip install --user cookiecutter
 
 
 Step 2: Generate Your Package
@@ -28,9 +28,9 @@ Now it's time to generate your Python package.
 
 Use cookiecutter, pointing it at the fuse-standard repo:
 
-    .. code-block:: bash
+.. code-block:: console
 
-        cookiecutter https://github.com/sp-fm/fuse-standard.git
+    $ cookiecutter https://github.com/sp-fm/fuse-standard.git
 
 You'll be asked to enter a bunch of values to set the package up. If you don't
 know what to enter, stick with the defaults.
@@ -39,23 +39,23 @@ know what to enter, stick with the defaults.
 Step 3: Setup Virtual Environment
 ---------------------------------
 
-    .. code-block:: bash
+.. code-block:: console
 
-        pip install --user poetry
+    $ pip install --user poetry
 
 If you want to install prerelease versions, you can do so by passing --pre
 option.
 
-    .. code-block:: bash
+.. code-block:: console
 
-        pip install --user poetry --pre
+    $ pip install --user poetry --pre
 
 Activate your environment:
 
-    .. code-block:: bash
+.. code-block:: console
 
-        cd mypackage
-        poetry shell
+    $ cd mypackage
+    $ poetry shell
 
 Here, ``mypackage`` is the name of the package that you'll create.
 
@@ -70,13 +70,13 @@ cookiecutter. This is so that Travis CI can find it when we get to Step 5.
 You will find one folder named after the ``[project_slug]``. Move into this
 folder, and then setup git to use your GitHub repo and upload the code:
 
-    .. code-block:: bash
+.. code-block:: console
 
-        git init .
-        git add .
-        git commit -m "Initial skeleton."
-        git remote add origin git@github.com:myusername/mypackage.git
-        git push -u origin master
+    $ git init .
+    $ git add .
+    $ git commit -m "Initial skeleton."
+    $ git remote add origin git@github.com:myusername/mypackage.git
+    $ git push -u origin master
 
 Where ``myusername`` and ``mypackage`` are adjusted for your username and
 package name.
@@ -96,9 +96,9 @@ You should still be in the folder containing the ``pyproject.toml`` file.
 Your virtualenv should still be activated. If it isn't, activate it now. Install
 the new project's local development requirements:
 
-    .. code-block:: bash
+.. code-block:: console
 
-        poetry install
+    $ poetry install
 
 
 Step 6: Set Up Travis CI
@@ -140,9 +140,9 @@ can work with any Sphinx project.
 These have already been set up for you. You can generate the docs for your
 project using the command:
 
-    .. code-block:: bash
+.. code-block:: console
 
-        make docs
+    $ make docs
 
 `GitHub Pages`_ is a static site hosting service that takes HTML, CSS, and
 JavaScript files straight from a repository on GitHub optionally runs the files

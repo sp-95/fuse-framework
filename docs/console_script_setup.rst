@@ -2,7 +2,7 @@
 
 
 Console Script Setup
-=================
+====================
 
 Your package includes a console script using Click.
 
@@ -16,9 +16,9 @@ Usage
 ------------
 To use the console script in development:
 
-.. code-block:: bash
+.. code-block:: console
 
-    poetry install
+    $ poetry install
 
 'projectdir' should be the top level project directory with the pyproject.toml file
 

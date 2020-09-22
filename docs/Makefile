@@ -1,10 +1,10 @@
 # Minimal makefile for Sphinx documentation
 #
 
-# You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = fuse-standard
+# You can set these variables from the command line, and also
+# from the environment for the first two.
+SPHINXOPTS    ?=
+SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
 BUILDDIR      = _build
 
@@ -19,4 +19,3 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	@find "$(BUILDDIR)/html/" -mindepth 1 -maxdepth 1 | xargs -I '{}' mv {} "$(BUILDDIR)/" ||:
-	@rm -r "$(BUILDDIR)/html/" ||:

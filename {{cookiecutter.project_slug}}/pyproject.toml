@@ -43,6 +43,7 @@ coverage = "*"
 flake8 = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
+tomlkit = "*"
 
 [tool.poetry.scripts]
 {{ cookiecutter.project_slug }} = '{{ cookiecutter.project_slug }}.cli:main'

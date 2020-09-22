@@ -31,15 +31,15 @@ Quickstart
 Install the latest Cookiecutter if you haven't installed it yet (this requires
 Cookiecutter 1.4.0 or higher):
 
-    .. code-block:: bash
+.. code-block:: console
 
-        pip install -U cookiecutter
+    $ pip install -U cookiecutter
 
 Generate a Python package project:
 
-    .. code-block:: bash
+.. code-block:: console
 
-        cookiecutter https://github.com/sp-fm/fuse-standard.git
+    $ cookiecutter https://github.com/sp-fm/fuse-standard.git
 
 Then:
 

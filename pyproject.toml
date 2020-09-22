@@ -31,6 +31,7 @@ cookiecutter = "*"
 pytest-cookies = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
+tomlkit = "*"
 PyYAML = "*"
 
 [build-system]

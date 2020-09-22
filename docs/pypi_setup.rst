@@ -13,24 +13,24 @@ To publish to PyPI, you can set your credentials for the repository named pypi.
 
 Note that it is recommended to use API tokens when uploading packages to PyPI. Once you have created a new token, you can tell Poetry to use it:
 
-.. code-block:: bash
+.. code-block:: console
 
-    poetry config pypi-token.pypi my-token
+    $ poetry config pypi-token.pypi my-token
 
 If you still want to use your username and password, you can do so with the following call to config.
 
-.. code-block:: bash
+.. code-block:: console
 
-    poetry config http-basic.pypi username password
+    $ poetry config http-basic.pypi username password
 
 Packaging
 ---------
 
 Before you can publish your library, you will need to package it.
 
-.. code-block:: bash
+.. code-block:: console
 
-    poetry build
+    $ poetry build
 
 This command will package your library in two different formats: sdist which is the source format, and wheel which is a compiled package.
 
@@ -45,9 +45,9 @@ Poetry will publish to PyPI by default. Anything that is published to PyPI is av
 
 If we wanted to share a package with the Python community, we would publish on PyPI as well. Doing so is easy.
 
-.. code-block:: bash
+.. code-block:: console
 
-    poetry publish
+    $ poetry publish
 
 This will package and publish the library to PyPI, at the condition that you are a registered user and you have configured your credentials properly.
 
@@ -55,9 +55,9 @@ The publish command does not execute build by default.
 
 If you want to build and publish your packages together, just pass the --build option.
 
-.. code-block:: bash
+.. code-block:: console
 
-    poetry publish --build
+    $ poetry publish --build
 
 Once this is done, your library will be available to anyone.
 
@@ -140,11 +140,11 @@ Your Release Process
 
 If you are using this feature, this is how you would do a patch release:
 
-.. code-block:: bash
+.. code-block:: console
 
-    poetry version patch
-    git tag `poetry version -s`
-    git push --tags
+    $ poetry version patch
+    $ git tag `poetry version -s`
+    $ git push --tags
 
 This will result in:
 

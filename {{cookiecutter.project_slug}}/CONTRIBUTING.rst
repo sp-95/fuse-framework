@@ -56,23 +56,23 @@ local development. Please note this documentation assumes you already have
 
 #. Clone the `{{ cookiecutter.project_slug }}` repo locally:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-        git clone git@github.com:your_name_here/{{ cookiecutter.project_slug }}.git
+        $ git clone git@github.com:your_name_here/{{ cookiecutter.project_slug }}.git
 
 #. Assuming you have poetry installed, you can create a new environment for your
    local development by typing:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-        poetry shell
-        poetry install
+        $ poetry shell
+        $ poetry install
 
 #. Create a branch for local development:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-        git checkout -b name-of-your-bugfix-or-feature
+        $ git checkout -b name-of-your-bugfix-or-feature
 
    Now you can make your changes locally.
 
@@ -80,25 +80,25 @@ local development. Please note this documentation assumes you already have
    this package contains mostly templates the flake should be run for tests
    directory:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-        flake8 ./tests
+        $ flake8 ./tests
 
 #. The next step would be to run the test cases. `fuse-standard` uses pytest,
    you can run PyTest. Before you run pytest you should ensure all dependancies
    are installed:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-        poetry install
-        pytest ./tests
+        $ poetry install
+        $ pytest ./tests
 
 #. Before raising a pull request you should also run tox. This will run the
    tests across different versions of Python:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-        tox
+        $ tox
 
    If you are missing flake8, pytest, and/or tox, just `poetry add` them into
    your virtualenv.
@@ -108,11 +108,11 @@ local development. Please note this documentation assumes you already have
 
 #. Commit your changes and push your branch to GitHub:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-        git add .
-        git commit -m "Your detailed description of your changes."
-        git push origin name-of-your-bugfix-or-feature
+        $ git add .
+        $ git commit -m "Your detailed description of your changes."
+        $ git push origin name-of-your-bugfix-or-feature
 
 #. Submit a pull request through the GitHub website.
 
@@ -146,32 +146,32 @@ To write and run your new test, follow these steps:
 #. If you have already made changes to the code, stash your changes and confirm
    all your changes were stashed:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-        git stash
-        git stash list
+        $ git stash
+        $ git stash list
 
 #. Run your test and confirm that your test fails. If your test does not fail,
    rewrite the test until it fails on the original code:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-        pytest ./tests
+        $ pytest ./tests
 
 #. (Optional) Run the tests with tox to ensure that the code changes work with
    different Python versions:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-        tox
+        $ tox
 
 #. Proceed work on your bug fix or the new feature or restore your changes. To
    restore your stashed changes and confirm their restoration:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-        git stash pop
-        git stash list
+        $ git stash pop
+        $ git stash list
 
 #. Rerun your test and confirm that your test passes. If it passes,
    congratulations!
@@ -182,10 +182,10 @@ Deploying
 A reminder for the maintainers on how to deploy. Make sure all your changes are
 committed (including an entry in CHANGELOG.rst). Then run:
 
-    .. code-block:: bash
+   .. code-block:: console
 
-         poetry version patch
-         git tag `poetry version -s`
-         git push --tags
+         $ poetry version patch
+         $ git tag `poetry version -s`
+         $ git push --tags
 
 Travis will then deploy to PyPI if tests pass.
