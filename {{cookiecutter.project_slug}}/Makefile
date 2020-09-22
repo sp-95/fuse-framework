@@ -1,4 +1,4 @@
-.PHONY: clean clean-test clean-pyc clean-build docs help
+.PHONY: help clean lint test docs install build publish
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -70,13 +70,12 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/index.html
 
-release: dist ## package and upload a release
-	twine upload dist/*
+install: clean ## install the package to the active Python's site-packages
+	poetry install
 
-dist: clean ## builds source and wheel package
-	python setup.py sdist
-	python setup.py bdist_wheel
+build: clean ## builds source and wheel package
+	poetry build
 	ls -l dist
 
-install: clean ## install the package to the active Python's site-packages
-	python setup.py install
+publish: build ## package and upload a release
+	poetry publish
