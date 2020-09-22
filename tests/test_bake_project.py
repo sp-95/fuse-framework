@@ -49,7 +49,9 @@ def run_inside_dir(command, dirpath):
 
 
 def check_output_inside_dir(command, dirpath):
-    "Run a command from inside a given directory, returning the command output"
+    """
+    Run a command from inside a given directory, returning the command output
+    """
     with inside_dir(dirpath):
         return subprocess.check_output(shlex.split(command))
 
@@ -122,10 +124,10 @@ def test_make_help(cookies):
 
 @pytest.mark.parametrize("license_info", [
     ('MIT license', 'MIT '),
-    ('BSD license', 'Redistributions of source code must retain the above' +
+    ('BSD license', 'Redistributions of source code must retain the above'
      ' copyright notice, this'),
     ('ISC license', 'ISC License'),
-    ('Apache Software License 2.0', 'Licensed under the Apache License,' +
+    ('Apache Software License 2.0', 'Licensed under the Apache License,'
      ' Version 2.0'),
     ('GNU General Public License v3', 'GNU GENERAL PUBLIC LICENSE'),
 ])
