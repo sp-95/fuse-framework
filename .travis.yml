@@ -38,14 +38,3 @@ jobs:
         keep_history: true
         on:
           branch: fuse
-    - stage: deploy
-      name: Deploy to PyPi
-      if: tag IS present
-      before_deploy: poetry config pypi-token.pypi $PYPI_TOKEN
-      deploy:
-        provider: script
-        script: poetry publish --build
-        skip_cleanup: true
-        on:
-          tags: true
-          branch: fuse
