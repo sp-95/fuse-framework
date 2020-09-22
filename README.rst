@@ -50,6 +50,12 @@ Then:
 
 For more details, see the `fuse-standard tutorial`_.
 
+Acknowledgement
+---------------
+
+This package is a modified duplicate of the `audreyr/cookiecutter-pypackage`_
+project template
+
 .. _Cookiecutter: https://github.com/cookiecutter/cookiecutter
 .. _Travis-CI: http://travis-ci.org/
 .. _Tox: http://testrun.org/tox/
@@ -60,3 +66,4 @@ For more details, see the `fuse-standard tutorial`_.
 .. _flake8: https://pypi.org/project/flake8/
 .. _pre_commit_hooks: https://github.com/pre-commit/pre-commit-hooks
 .. _`fuse-standard tutorial`: https://sp-fm.github.io/fuse-standard/tutorial.html
+.. _audreyr/cookiecutter-pypackage: https://github.com/audreyfeldroy/cookiecutter-pypackage
