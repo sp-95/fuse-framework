@@ -2,9 +2,6 @@
 Contributing
 ============
 
-Contributions are welcome, and they are greatly appreciated! Every little bit
-helps, and credit will always be given.
-
 You can contribute in many ways:
 
 Types of Contributions
@@ -13,7 +10,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/audreyr/cookiecutter-pypackage/issues
+Report bugs at https://github.com/sp-fm/fuse-cookiecutter/issues.
 
 If you are reporting a bug, please include:
 
@@ -24,19 +21,17 @@ If you are reporting a bug, please include:
 Fix Bugs
 ~~~~~~~~
 
-Look through the GitHub issues for bugs. Anything tagged with "bug"
-and "help wanted" is open to whoever wants to implement a fix for it.
+Look through the GitHub issues for bugs that are tagged with "bug".
 
 Implement Features
 ~~~~~~~~~~~~~~~~~~
 
-Look through the GitHub issues for features. Anything tagged with "enhancement"
-and "help wanted" is open to whoever wants to implement it.
+Look through the GitHub issues for features that are tagged with "enhancement".
 
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Cookiecutter PyPackage could always use more documentation, whether as part of
+FuseMachines Standard could always use more documentation, whether as part of
 the official docs, in docstrings, or even on the web in blog posts, articles,
 and such.
 
@@ -44,136 +39,97 @@ Submit Feedback
 ~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at
-https://github.com/audreyr/cookiecutter-pypackage/issues.
+https://github.com/sp-fm/fuse-cookiecutter/issues.
 
 If you are proposing a new feature:
 
 * Explain in detail how it would work.
 * Keep the scope as narrow as possible, to make it easier to implement.
-* Remember that this is a volunteer-driven project, and that contributions
-  are welcome :)
 
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `cookiecutter-pypackage` for local
-development. Please note this documentation assumes you already have
-`virtualenv` and `Git` installed and ready to go.
+Ready to contribute? Here's how to set up `fuse-standard` for local development.
+Please note this documentation assumes you already have `poetry` and `git`
+installed and ready to go.
 
-1. Fork the `cookiecutter-pypackage` repo on GitHub.
+#. Clone the `fuse-standard` repo locally:
 
-::
+    .. code-block:: bash
 
-2. Clone your fork locally:
+        cd path_for_the_repo
+        git clone git@github.com:sp-fm/fuse-standard.git
 
-   .. code-block:: bash
+#. Assuming you have poetry installed, you can create a new environment for your
+   local development by typing:
 
-    $ cd path_for_the_repo
-    $ git clone git@github.com:YOUR_NAME/cookiecutter-pypackage.git
+    .. code-block:: bash
 
-::
+        poetry shell
+        poetry install
 
-3. Assuming you have virtualenv installed (If you have Python3.5 this should
-   already be there), you can create a new environment for your local
-   development by typing:
+#. Create a branch for local development:
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-        $ virtualenv cookiecutter-pypackage-env
-        $ source cookiecutter-pypackage-env/bin/activate
-
-   This should change the shell to look something like:
-
-   .. code-block:: bash
-
-        (cookiecutter-pypackage-env) $
-
-::
-
-4. Create a branch for local development:
-
-   .. code-block:: bash
-
-        $ git checkout -b name-of-your-bugfix-or-feature
+        git checkout -b name-of-your-bugfix-or-feature
 
    Now you can make your changes locally.
 
-::
-
-5. When you're done making changes, check that your changes pass flake8. Since,
+#. When you're done making changes, check that your changes pass flake8. Since,
    this package contains mostly templates the flake should be run for tests
    directory:
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-        $ flake8 ./tests
+        flake8 ./tests
 
-::
+#. The next step would be to run the test cases. `fuse-standard` uses pytest,
+   you can run PyTest. Before you run pytest you should ensure all dependancies
+   are installed:
 
-6. The next step would be to run the test cases. `cookiecutter-pypackage` uses
-   pytest, you can run PyTest. Before you run pytest you should ensure all
-   dependancies are installed:
+    .. code-block:: bash
 
-   .. code-block:: bash
+        poetry install
+        pytest ./tests
 
-        $ pip install -rrequirements_dev.txt
-        $ pytest ./tests
-
-   If you get any errors while installing cryptography package (something like
-   `#include <openssl/aes.h>`). Please update your pip version and try again:
-
-   .. code-block:: bash
-
-        # Update pip
-        $ pip install -U pip
-
-::
-
-7. Before raising a pull request you should also run tox. This will run the
+#. Before raising a pull request you should also run tox. This will run the
    tests across different versions of Python:
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-        $ tox
+        tox
 
-   If you are missing flake8, pytest and/or tox, just `pip install` them into
+   If you are missing flake8, pytest, and/or tox, just `poetry add` them into
    your virtualenv.
 
-::
-
-8. If your contribution is a bug fix or new feature, you may want to add a test
+#. If your contribution is a bug fix or new feature, you may want to add a test
    to the existing test suite. See section Add a New Test below for details.
 
-::
+#. Commit your changes and push your branch to GitHub:
 
-9. Commit your changes and push your branch to GitHub:
+    .. code-block:: bash
 
-   .. code-block:: bash
+        git add .
+        git commit -m "Your detailed description of your changes."
+        git push origin name-of-your-bugfix-or-feature
 
-        $ git add .
-        $ git commit -m "Your detailed description of your changes."
-        $ git push origin name-of-your-bugfix-or-feature
-
-::
-
-10. Submit a pull request through the GitHub website.
-
-::
+#. Submit a pull request through the GitHub website.
 
 Pull Request Guidelines
 -----------------------
 
 Before you submit a pull request, check that it meets these guidelines:
 
-1. The pull request should include tests.
+#. The pull request should include tests.
 
-2. If the pull request adds functionality, the docs should be updated. Put your
+#. If the pull request adds functionality, the docs should be updated. Put your
    new functionality into a function with a docstring, and add the feature to
    the list in README.rst.
 
-3. The pull request should work for Python 3.5, 3.6 and 3.7, 3.8 and for PyPy. Check
-   https://travis-ci.org/audreyr/cookiecutter-pypackage/pull_requests and
-   make sure that the tests pass for all supported Python versions.
+#. The pull request should work for Python 3.7 and 3.8. Check
+   https://travis-ci.com/sp-fm/fuse-standard/pull_requests and make sure that
+   the tests pass for all supported Python versions.
 
 Add a New Test
 --------------
@@ -184,53 +140,56 @@ focus on one tiny bit of functionality and prove changes are correct.
 
 To write and run your new test, follow these steps:
 
-1. Add the new test to `tests/test_bake_project.py`. Focus your test on the
+#. Add the new test to `tests/test_bake_project.py`. Focus your test on the
    specific bug or a small part of the new feature.
 
-::
-
-2. If you have already made changes to the code, stash your changes and confirm
+#. If you have already made changes to the code, stash your changes and confirm
    all your changes were stashed:
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-        $ git stash
-        $ git stash list
+        git stash
+        git stash list
 
-::
-
-3. Run your test and confirm that your test fails. If your test does not fail,
+#. Run your test and confirm that your test fails. If your test does not fail,
    rewrite the test until it fails on the original code:
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-        $ pytest ./tests
+        pytest ./tests
 
-::
-
-4. (Optional) Run the tests with tox to ensure that the code changes work with
+#. (Optional) Run the tests with tox to ensure that the code changes work with
    different Python versions:
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-        $ tox
+        tox
 
-::
-
-5. Proceed work on your bug fix or new feature or restore your changes. To
+#. Proceed work on your bug fix or the new feature or restore your changes. To
    restore your stashed changes and confirm their restoration:
 
-   .. code-block:: bash
+    .. code-block:: bash
 
-        $ git stash pop
-        $ git stash list
+        git stash pop
+        git stash list
 
-::
-
-6. Rerun your test and confirm that your test passes. If it passes,
+#. Rerun your test and confirm that your test passes. If it passes,
    congratulations!
 
-.. cookiecutter: https://github.com/audreyr/cookiecutter-pypackage
-.. virtualenv: https://virtualenv.pypa.io/en/stable/installation
-.. git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+Deploying
+---------
 
+A reminder for the maintainers on how to deploy. Make sure all your changes are
+committed (including an entry in CHANGELOG.rst). Then run:
+
+    .. code-block:: bash
+
+         poetry version patch
+         git tag `poetry version -s`
+         git push --tags
+
+Travis will then deploy to PyPI if tests pass.
+
+.. cookiecutter: https://github.com/audreyr/cookiecutter-pypackage
+.. poetry: https://python-poetry.org/docs/
+.. git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
