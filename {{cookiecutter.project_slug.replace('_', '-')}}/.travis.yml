@@ -38,7 +38,7 @@ jobs:
         keep_history: true
         on:
           branch: master
-{% if cookiecutter.use_pypi_deployment_with_travis == 'y' -%}
+{%- if cookiecutter.use_pypi_deployment_with_travis == 'y' %}
     - stage: deploy
       name: Deploy to PyPi
       if: tag IS present
@@ -50,4 +50,4 @@ jobs:
         on:
           tags: true
           branch: master
-{%- endif %}
+{% endif -%}

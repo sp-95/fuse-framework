@@ -317,5 +317,5 @@ $RECYCLE.BIN/
 
 # Cookiecutter
 output/
-python_boilerplate/
+python-boilerplate/
 cookiecutter-pypackage-env/
