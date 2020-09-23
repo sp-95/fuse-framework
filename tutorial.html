@@ -227,7 +227,7 @@ the new project’s local development requirements.</p>
 <div class="section" id="step-5-initialize-git">
 <h2>Step 5: Initialize Git<a class="headerlink" href="#step-5-initialize-git" title="Permalink to this headline">¶</a></h2>
 <p>Create an empty Git repository.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git init .
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git init
 </pre></div>
 </div>
 </div>
@@ -261,7 +261,8 @@ cookiecutter. This is so that Travis CI can find it when we get to Step 7.</p>
 <p>You will find one folder named after the <code class="docutils literal notranslate"><span class="pre">[project_slug]</span></code>. Move into this
 folder, and then setup git to use your GitHub repo and upload the code.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git add .
-<span class="gp">$</span> git commit -m <span class="s2">&quot;Initial skeleton.&quot;</span>
+<span class="gp">$</span> git commit -m <span class="s2">&quot;first commit&quot;</span>
+<span class="gp">$</span> git branch -M master
 <span class="gp">$</span> git remote add origin git@github.com:myusername/mypackage.git
 <span class="gp">$</span> git push -u origin master
 </pre></div>

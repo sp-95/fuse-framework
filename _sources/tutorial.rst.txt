@@ -80,7 +80,7 @@ Create an empty Git repository.
 
 .. code-block:: console
 
-    $ git init .
+    $ git init
 
 
 Step 6: Pre-commit Installation
@@ -130,7 +130,8 @@ folder, and then setup git to use your GitHub repo and upload the code.
 .. code-block:: console
 
     $ git add .
-    $ git commit -m "Initial skeleton."
+    $ git commit -m "first commit"
+    $ git branch -M master
     $ git remote add origin git@github.com:myusername/mypackage.git
     $ git push -u origin master
 
