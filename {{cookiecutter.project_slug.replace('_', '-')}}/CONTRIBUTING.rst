@@ -12,7 +12,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/issues.
+Report bugs at https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/issues.
 
 If you are reporting a bug, please include:
 
@@ -40,7 +40,7 @@ even on the web in blog posts, articles, and such.
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/issues.
+The best way to send feedback is to file an issue at https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/issues.
 
 If you are proposing a feature:
 
@@ -50,15 +50,15 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for
-local development. Please note this documentation assumes you already have
+Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug.replace('_', '-') }}`
+for local development. Please note this documentation assumes you already have
 `poetry` and `git` installed and ready to go.
 
-#. Clone the `{{ cookiecutter.project_slug }}` repo locally:
+#. Clone the `{{ cookiecutter.project_slug.replace('_', '-') }}` repo locally:
 
    .. code-block:: console
 
-        $ git clone git@github.com:your_name_here/{{ cookiecutter.project_slug }}.git
+        $ git clone git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}.git
 
 #. Assuming you have poetry installed, you can create a new environment for your
    local development by typing:
@@ -128,7 +128,7 @@ Before you submit a pull request, check that it meets these guidelines:
    the list in README.rst.
 
 #. The pull request should work for Python 3.7 and 3.8. Check
-   https://travis-ci.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/pull_requests
+   https://travis-ci.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Add a New Test

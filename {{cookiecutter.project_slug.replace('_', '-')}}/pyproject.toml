@@ -7,9 +7,9 @@
 } -%}
 [tool]
 [tool.poetry]
-name = "{{ cookiecutter.project_slug }}"
+name = "{{ cookiecutter.project_slug.replace('_', '-') }}"
 version = "{{ cookiecutter.version }}"
-homepage = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
+homepage = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}"
 description = "Top-level package for {{ cookiecutter.project_name }}."
 authors = ["{{ cookiecutter.full_name.replace('\"', '\\\"') }} <{{ cookiecutter.email }}>"]
 readme = "README.rst"
