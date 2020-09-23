@@ -14,7 +14,7 @@ top of the page at `GitHub Help`_.
 Step 1: Install Cookiecutter
 ----------------------------
 
-Install cookiecutter:
+Install cookiecutter.
 
 .. code-block:: console
 
@@ -26,7 +26,7 @@ Step 2: Generate Your Package
 
 Now it's time to generate your Python package.
 
-Use cookiecutter, pointing it at the fuse-standard repo:
+Use cookiecutter, pointing it at the fuse-standard repo.
 
 .. code-block:: console
 
@@ -50,7 +50,7 @@ option.
 
     $ pip install --user poetry --pre
 
-Activate your environment:
+Activate your environment.
 
 .. code-block:: console
 
@@ -60,19 +60,75 @@ Activate your environment:
 Here, ``mypackage`` is the name of the package that you'll create.
 
 
-Step 4: Create a GitHub Repo
-----------------------------
+Step 4: Install Dev Requirements
+--------------------------------
 
-Go to your GitHub account and create a new repo named ``mypackage``, where
-``mypackage`` matches the ``[project_slug]`` from your answers to running
-cookiecutter. This is so that Travis CI can find it when we get to Step 5.
+You should still be in the folder containing the ``pyproject.toml`` file.
 
-You will find one folder named after the ``[project_slug]``. Move into this
-folder, and then setup git to use your GitHub repo and upload the code:
+Your virtualenv should still be activated. If it isn't, activate it now. Install
+the new project's local development requirements.
+
+.. code-block:: console
+
+    $ poetry install
+
+
+Step 5: Initialize Git
+----------------------
+
+Create an empty Git repository.
 
 .. code-block:: console
 
     $ git init .
+
+
+Step 6: Pre-commit Installation
+-------------------------------
+
+Git hook scripts are useful for identifying simple issues before submission to
+code review. We run our hooks on every commit to automatically point out issues
+in code such as trailing whitespace, and debug statements. By pointing these
+issues out before code review, this allows a code reviewer to focus on the
+architecture of a change while not wasting time with trivial style nitpicks.
+
+Before you can run hooks, you need to have the pre-commit_ package manager
+installed.
+
+Install pre-commit if it is not present in the dependencies.
+
+.. code-block:: console
+
+    $ poetry add pre-commit --dev
+    $ pre-commit --version
+
+You can change your pre-commit configurations in the ``.pre-commit-config.yaml``
+file. This is the list of `hooks supported`_ by pre-commit.
+
+Set up the git hook scripts.
+
+.. code-block:: console
+
+    $ pre-commit install
+
+Now pre-commit will run automatically on ``git commit``!
+
+.. _pre-commit: https://pre-commit.com/
+.. _hooks supported: https://pre-commit.com/hooks.html
+
+
+Step 7: Create a GitHub Repo
+----------------------------
+
+Go to your GitHub account and create a new repo named ``mypackage``, where
+``mypackage`` matches the ``[project_slug]`` from your answers to running
+cookiecutter. This is so that Travis CI can find it when we get to Step 7.
+
+You will find one folder named after the ``[project_slug]``. Move into this
+folder, and then setup git to use your GitHub repo and upload the code.
+
+.. code-block:: console
+
     $ git add .
     $ git commit -m "Initial skeleton."
     $ git remote add origin git@github.com:myusername/mypackage.git
@@ -88,20 +144,7 @@ existing one.
 .. _`Add`: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 
 
-Step 5: Install Dev Requirements
---------------------------------
-
-You should still be in the folder containing the ``pyproject.toml`` file.
-
-Your virtualenv should still be activated. If it isn't, activate it now. Install
-the new project's local development requirements:
-
-.. code-block:: console
-
-    $ poetry install
-
-
-Step 6: Set Up Travis CI
+Step 8: Set Up Travis CI
 ------------------------
 
 `Travis CI org`_ [*]_ is a continuous integration tool used to prevent
@@ -122,7 +165,7 @@ Add the public repo to your Travis CI account by clicking the ``X`` to switch it
 .. _`Travis CI com`: https://travis-ci.com/
 
 
-Step 7: Set Up the Docs
+Step 9: Set Up the Docs
 --------------------------
 
 `Sphinx`_ is a tool that makes it easy to create intelligent and beautiful
@@ -137,21 +180,12 @@ designed to provide a great reader experience for documentation users on both
 desktop and mobile devices. This theme is used primarily on `Read the Docs`_ but
 can work with any Sphinx project.
 
-These have already been set up for you. You can generate the docs for your
-project using the command:
-
-.. code-block:: console
-
-    $ make docs
-
 `GitHub Pages`_ is a static site hosting service that takes HTML, CSS, and
 JavaScript files straight from a repository on GitHub optionally runs the files
 through a build process, and publishes a website.
 
 You can host your site on GitHub's ``github.io`` domain or your custom
-domain.
-
-`GitHub Pages Deployment using Travis CI`_ has already been set up for you.
+domain. You can automatically host to `GitHub Pages using Travis CI`_.
 
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
@@ -159,11 +193,11 @@ domain.
 .. _Read the Docs Sphinx Theme: https://github.com/readthedocs/sphinx_rtd_theme
 .. _Read the Docs: https://readthedocs.org/
 .. _GitHub Pages: https://docs.github.com/en/github/working-with-github-pages/about-github-pages
-.. _GitHub Pages Deployment using Travis CI: https://docs.travis-ci.com/user/deployment/pages/
+.. _GitHub Pages using Travis CI: https://docs.travis-ci.com/user/deployment/pages/
 
 
-Step 8: Release on PyPI
------------------------
+Step 10: Release on PyPI
+------------------------
 
 The Python Package Index or `PyPI`_ is the official third-party software
 repository for the Python programming language. Python developers intend it to
