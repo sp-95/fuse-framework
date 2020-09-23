@@ -50,19 +50,18 @@ def add_source_parser(self, _old_add_source_parser, *args, **kwargs):
 # -- Project information -----------------------------------------------------
 
 def _get_project_meta():
-    with open('../pyproject.toml') as pyproject:
+    with open("../pyproject.toml") as pyproject:
         file_contents = pyproject.read()
 
-    return tomlkit.parse(file_contents)['tool']['poetry']
+    return tomlkit.parse(file_contents)["tool"]["poetry"]
 
 
 pkg_meta = _get_project_meta()
-project = str(pkg_meta['name'])
 copyright = '2020, Shashanka Prajapati'
 author = 'Shashanka Prajapati'
 
 # The full version, including alpha/beta/rc tags
-release = str(pkg_meta['version'])
+release = str(pkg_meta["version"])
 
 # -- General configuration ---------------------------------------------------
 
@@ -70,12 +69,12 @@ release = str(pkg_meta['version'])
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.coverage',
-    'sphinx.ext.doctest',
-    'sphinx.ext.githubpages',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.todo',
-    'sphinx.ext.viewcode',
+    "sphinx.ext.coverage",
+    "sphinx.ext.doctest",
+    "sphinx.ext.githubpages",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.todo",
+    "sphinx.ext.viewcode",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
