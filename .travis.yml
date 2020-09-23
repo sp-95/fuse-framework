@@ -1,40 +1,40 @@
 dist: xenial
 language: python
 python:
-  - 3.8
-  - 3.7
+    - 3.8
+    - 3.7
 
 env:
-  global:
-    - POETRY_VIRTUALENVS_CREATE=false
+    global:
+        - POETRY_VIRTUALENVS_CREATE=false
 
 cache:
-  pip: true
-  directories:
-    - "$HOME/.cache/pypoetry"
-    - "$HOME/.cache/pre-commit"
+    pip: true
+    directories:
+        - "$HOME/.cache/pypoetry"
+        - "$HOME/.cache/pre-commit"
 
 before_install:
-  - pip install pip -U
-  - pip install poetry -U
+    - pip install pip -U
+    - pip install poetry -U
 install:
-  - poetry update --no-interaction # Encountering RecursionError on install only
-  - poetry install --no-interaction
+    - poetry update --no-interaction # Encountering RecursionError on install only
+    - poetry install --no-interaction
 
 before_script: poetry add tox-travis --dev
 script: tox
 
 jobs:
-  include:
-    - stage: deploy
-      name: Deploy to GitHub Pages
-      if: branch = fuse
-      script: make docs
-      deploy:
-        provider: pages
-        skip_cleanup: true
-        github_token: $GITHUB_TOKEN
-        local_dir: docs/_build
-        keep_history: true
-        on:
-          branch: fuse
+    include:
+        - stage: deploy
+          name: Deploy to GitHub Pages
+          if: branch = fuse OR tag IS present
+          script: make docs
+          deploy:
+              provider: pages
+              skip_cleanup: true
+              github_token: $GITHUB_TOKEN
+              local_dir: docs/_build
+              keep_history: true
+              on:
+                  branch: fuse
