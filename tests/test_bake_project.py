@@ -86,8 +86,16 @@ def test_bake_with_defaults(cookies):
 
 @pytest.mark.parametrize("extra_context", [
     {},
-    {"full_name": 'name "quote" name'},
-    {"full_name": "O'connor"}
+    {
+        "full_name": 'name "quote" name',
+        "email": "name.quote.name@example.com",
+        "github_username": "name-quote-name",
+    },
+    {
+        "full_name": "O'connor",
+        "email": "o.conner@example.com",
+        "github_username": "o-conner",
+    }
 ])
 def test_bake_and_run_tests(cookies, extra_context):
     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
