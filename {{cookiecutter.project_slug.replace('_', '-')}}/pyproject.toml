@@ -49,7 +49,7 @@ tomlkit = "*"
 pre-commit = "*"
 
 [tool.poetry.scripts]
-{{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.cli:main"
+{{ cookiecutter.project_slug.replace('_', '-') }} = "{{ cookiecutter.project_slug }}.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = "tests"
