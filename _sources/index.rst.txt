@@ -6,38 +6,30 @@
 Welcome to FuseMachines Standard's documentation!
 =================================================
 
-Getting Started
----------------
-
 .. toctree::
    :maxdepth: 2
+   :caption: Getting Started
 
    readme
    tutorial
    pypi_release_checklist
 
-Basics
-------
-
 .. toctree::
    :maxdepth: 2
+   :caption: Basic Features
 
    prompts
 
-Advanced Features
------------------
-
 .. toctree::
    :maxdepth: 2
+   :caption: Advanced Features
 
    pypi_setup
    console_script_setup
 
-Miscellaneous
--------------
-
 .. toctree::
    :maxdepth: 2
+   :caption: Miscellaneous
 
    contributing
    troubleshooting
