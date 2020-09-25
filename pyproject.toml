@@ -32,9 +32,9 @@ cookiecutter = "*"
 pytest-cookies = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
-tomlkit = "*"
+toml = "*"
 PyYAML = "*"
-pre-commit = "^2.7.1"
+pre-commit = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0a5"]
