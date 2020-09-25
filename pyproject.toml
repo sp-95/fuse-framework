@@ -34,6 +34,7 @@ sphinx = "*"
 sphinx-rtd-theme = "*"
 tomlkit = "*"
 PyYAML = "*"
+pre-commit = "^2.7.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0a5"]
