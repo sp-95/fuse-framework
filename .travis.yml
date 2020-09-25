@@ -14,13 +14,14 @@ cache:
         - "$HOME/.cache/pypoetry"
         - "$HOME/.cache/pre-commit"
 
-before_install: pip install pip -U
-install: pip install poetry -U
+before_install:
+    - pip install pip -U
+    - pip install poetry -U
+install:
+    - poetry update --no-interaction # Encountering RecursionError on install only
+    - poetry install --no-interaction
 
-before_script:
-    - poetry update # Encountering RecursionError on install only
-    - poetry install
-    - poetry add tox-travis
+before_script: poetry add tox-travis --dev
 script: tox
 
 jobs:
@@ -28,7 +29,6 @@ jobs:
         - stage: deploy
           name: Deploy to GitHub Pages
           if: branch = fuse OR tag IS present
-          before_script: poetry add sphinx sphinx-rtd-theme toml
           script: make docs
           deploy:
               provider: pages
