@@ -64,12 +64,6 @@ repos:
           - id: add-trailing-comma
             args: [--py36-plus]
 
-    - repo: https://github.com/prettier/prettier
-      rev: 2.1.1
-      hooks:
-          - id: prettier
-            exclude: .travis.yml
-
     - repo: local
       hooks:
           - id: pytest
