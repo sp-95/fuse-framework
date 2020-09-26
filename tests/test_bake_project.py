@@ -84,22 +84,25 @@ def test_bake_with_defaults(cookies):
         assert "tests" in found_toplevel_files
 
 
-@pytest.mark.parametrize("extra_context", [
-    {},
-    {
-        "full_name": 'name "quote" name',
-        "email": "name.quote.name@example.com",
-        "github_username": "name-quote-name",
-    },
-    {
-        "full_name": "O'connor",
-        "email": "o.conner@example.com",
-        "github_username": "o-conner",
-    }
-])
+@pytest.mark.parametrize(
+    "extra_context", [
+        {},
+        {
+            "full_name": 'name "quote" name',
+            "email": "name.quote.name@example.com",
+            "github_username": "name-quote-name",
+        },
+        {
+            "full_name": "O'connor",
+            "email": "o.conner@example.com",
+            "github_username": "o-conner",
+        },
+    ],
+)
 def test_bake_and_run_tests(cookies, extra_context):
     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
         assert result.project.isdir()
+        assert run_inside_dir("poetry install", str(result.project)) == 0
         assert run_inside_dir("poetry run pytest", str(result.project)) == 0
         print("test_bake_and_run_tests path", str(result.project))
 
@@ -107,11 +110,11 @@ def test_bake_and_run_tests(cookies, extra_context):
 def test_bake_without_travis_pypi_setup(cookies):
     with bake_in_temp_dir(
         cookies,
-        extra_context={"use_pypi_deployment_with_travis": "n"}
+        extra_context={"use_pypi_deployment_with_travis": "n"},
     ) as result:
         result_travis_config = yaml.load(
             result.project.join(".travis.yml").open(),
-            Loader=yaml.FullLoader
+            Loader=yaml.FullLoader,
         )
         assert "deploy" not in result_travis_config
         assert "python" == result_travis_config["language"]
@@ -123,26 +126,32 @@ def test_make_help(cookies):
         if sys.platform != "win32":
             output = check_output_inside_dir(
                 "make help",
-                str(result.project)
+                str(result.project),
             )
             assert b"check code coverage quickly with the default Python" in \
                 output
 
 
-@pytest.mark.parametrize("license_info", [
-    ("MIT license", "MIT "),
-    ("BSD license", "Redistributions of source code must retain the above"
-     " copyright notice, this"),
-    ("ISC license", "ISC License"),
-    ("Apache Software License 2.0", "Licensed under the Apache License,"
-     " Version 2.0"),
-    ("GNU General Public License v3", "GNU GENERAL PUBLIC LICENSE"),
-])
+@pytest.mark.parametrize(
+    "license_info", [
+        ("MIT license", "MIT "),
+        (
+            "BSD license", "Redistributions of source code must retain the above"
+            " copyright notice, this",
+        ),
+        ("ISC license", "ISC License"),
+        (
+            "Apache Software License 2.0", "Licensed under the Apache License,"
+            " Version 2.0",
+        ),
+        ("GNU General Public License v3", "GNU GENERAL PUBLIC LICENSE"),
+    ],
+)
 def test_bake_selecting_license(cookies, license_info):
     license, target_string = license_info
     with bake_in_temp_dir(
         cookies,
-        extra_context={"open_source_license": license}
+        extra_context={"open_source_license": license},
     ) as result:
         assert target_string in result.project.join("LICENSE").read()
         assert license in result.project.join("pyproject.toml").read()
@@ -151,7 +160,7 @@ def test_bake_selecting_license(cookies, license_info):
 def test_bake_not_open_source(cookies):
     with bake_in_temp_dir(
         cookies,
-        extra_context={"open_source_license": "Not open source"}
+        extra_context={"open_source_license": "Not open source"},
     ) as result:
         found_toplevel_files = [f.basename for f in result.project.listdir()]
         assert "pyproject.toml" in found_toplevel_files
