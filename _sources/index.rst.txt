@@ -12,26 +12,26 @@ Welcome to Fusemachines Python Framework's documentation!
 
    readme
    tutorial
-   pypi_release_checklist
 
 .. toctree::
    :maxdepth: 2
    :caption: Basic Features
 
    prompts
+   console_script_setup
 
 .. toctree::
    :maxdepth: 2
    :caption: Advanced Features
 
    pypi_setup
-   console_script_setup
 
 .. toctree::
    :maxdepth: 2
    :caption: Miscellaneous
 
    contributing
+   pypi_release_checklist
    troubleshooting
 
 

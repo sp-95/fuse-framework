@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Contributing" href="contributing.html" />
-    <link rel="prev" title="PyPI Setup" href="pypi_setup.html" /> 
+    <link rel="next" title="PyPI Setup" href="pypi_setup.html" />
+    <link rel="prev" title="Prompts" href="prompts.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,15 +86,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="readme.html">Fusemachines Python Framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pypi_release_checklist.html">PyPI Release Checklist</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Basic Features</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="prompts.html">Prompts</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Advanced Features</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="pypi_setup.html">PyPI Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prompts.html">Prompts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Console Script Setup</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#how-it-works">How It Works</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
@@ -102,9 +97,14 @@
 </ul>
 </li>
 </ul>
+<p class="caption"><span class="caption-text">Advanced Features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pypi_setup.html">PyPI Setup</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pypi_release_checklist.html">PyPI Release Checklist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
@@ -173,11 +173,12 @@
             
   <div class="section" id="console-script-setup">
 <span id="id1"></span><h1>Console Script Setup<a class="headerlink" href="#console-script-setup" title="Permalink to this headline">¶</a></h1>
-<p>Your package includes a console script using Click.</p>
+<p>Your package includes a console script using <code class="docutils literal notranslate"><span class="pre">fire</span></code>.</p>
 <div class="section" id="how-it-works">
 <h2>How It Works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
-<p>Cookiecutter will add a file ‘cli.py’ in the project_slug subdirectory. An entry
-point is added to pyproject.toml that points to the main function in cli.py.</p>
+<p>Cookiecutter will add a file ‘cli.py’ in the module <code class="docutils literal notranslate"><span class="pre">dynaconf</span></code> in the project_slug
+subdirectory. An entry point is added to pyproject.toml that points to the main function
+in ‘cli.py’.</p>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
@@ -195,8 +196,8 @@ point is added to pyproject.toml that points to the main function in cli.py.</p>
 </div>
 <div class="section" id="more-details">
 <h2>More Details<a class="headerlink" href="#more-details" title="Permalink to this headline">¶</a></h2>
-<p>You can read more about Click at:
-<a class="reference external" href="http://click.pocoo.org/">http://click.pocoo.org/</a></p>
+<p>You can read more about fire at:
+<a class="reference external" href="https://google.github.io/python-fire/">https://google.github.io/python-fire/</a></p>
 </div>
 </div>
 
@@ -208,10 +209,10 @@ point is added to pyproject.toml that points to the main function in cli.py.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pypi_setup.html" class="btn btn-neutral float-right" title="PyPI Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pypi_setup.html" class="btn btn-neutral float-left" title="PyPI Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="prompts.html" class="btn btn-neutral float-left" title="Prompts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

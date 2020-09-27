@@ -87,24 +87,24 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Fusemachines Python Framework</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#quickstart">Quickstart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#acknowledgement">Acknowledgement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#acknowledgment">Acknowledgment</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pypi_release_checklist.html">PyPI Release Checklist</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Basic Features</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="prompts.html">Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="console_script_setup.html">Console Script Setup</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Advanced Features</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pypi_setup.html">PyPI Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="console_script_setup.html">Console Script Setup</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pypi_release_checklist.html">PyPI Release Checklist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
@@ -183,15 +183,18 @@
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Testing setup with <code class="docutils literal notranslate"><span class="pre">pytest</span></code></p></li>
-<li><p><a class="reference external" href="http://travis-ci.org/">Travis-CI</a>: Ready for Travis Continuous Integration testing</p></li>
-<li><p><a class="reference external" href="http://testrun.org/tox/">Tox</a> testing: Setup to easily test for Python 3.7, 3.8</p></li>
-<li><p><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> docs: Documentation ready for generation with, for example, <a class="reference external" href="https://readthedocs.io/">Read the Docs</a></p></li>
-<li><p>Command line interface using Click</p></li>
-<li><p>Auto-release to <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a> when you push a new tag to master (optional)</p></li>
 <li><p>Dependency tracking using <a class="reference external" href="https://python-poetry.org/docs/">poetry</a></p></li>
-<li><p>Linting provided by <a class="reference external" href="https://pypi.org/project/flake8/">flake8</a> [executed by Tox]</p></li>
+<li><p>Logging with <a class="reference external" href="https://loguru.readthedocs.io/en/stable/">loguru</a></p></li>
+<li><p>Command-line interface using <a class="reference external" href="https://google.github.io/python-fire/guide/">fire</a></p></li>
+<li><p><a class="reference external" href="https://www.dynaconf.com/">dynaconf</a> for Configuration Management</p></li>
 <li><p>Git hooks by <a class="reference external" href="https://github.com/pre-commit/pre-commit-hooks">pre_commit_hooks</a></p></li>
+<li><p>Testing setup with <code class="docutils literal notranslate"><span class="pre">pytest</span></code></p></li>
+<li><p>Linting provided by <a class="reference external" href="https://pypi.org/project/flake8/">flake8</a> [executed by Tox]</p></li>
+<li><p><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> docs: Documentation ready for generation with, for example, <a class="reference external" href="https://readthedocs.io/">Read the Docs</a></p></li>
+<li><p><a class="reference external" href="http://testrun.org/tox/">Tox</a> testing: Setup to easily test for Python 3.7 and 3.8</p></li>
+<li><p><a class="reference external" href="http://travis-ci.org/">Travis-CI</a>: Ready for Travis Continuous Integration testing</p></li>
+<li><p>Auto-release to <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a> when you push a new tag to master (optional)</p></li>
+<li><p>GitHub issue templates</p></li>
 </ul>
 </div>
 <div class="section" id="quickstart">
@@ -201,21 +204,31 @@ Cookiecutter 1.4.0 or higher):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install -U cookiecutter
 </pre></div>
 </div>
+<p>Install the prerelease version of poetry</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install -U poetry --pre
+</pre></div>
+</div>
 <p>Generate a Python package project:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cookiecutter https://github.com/sp-fm/fuse-framework.git
 </pre></div>
 </div>
+<p>Go to the generated project and run the initialization process:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> mypackage
+<span class="gp">$</span> make init
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">mypackage</span></code> is the name of the project that was generated.</p>
 <p>Then:</p>
 <ul class="simple">
 <li><p>Create a repo and put it there.</p></li>
 <li><p>Add the repo to your <a class="reference external" href="http://travis-ci.org/">Travis-CI</a> account.</p></li>
-<li><p>Install the dev requirements into a virtualenv. (<code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code>)</p></li>
+<li><p>Generate the docs by pushing your first commit to master.</p></li>
 <li><p>Release your package by pushing a new tag to master.</p></li>
 </ul>
 <p>For more details, see the <a class="reference external" href="https://sp-fm.github.io/fuse-framework/tutorial.html">fuse-framework tutorial</a>.</p>
 </div>
-<div class="section" id="acknowledgement">
-<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="acknowledgment">
+<h2>Acknowledgment<a class="headerlink" href="#acknowledgment" title="Permalink to this headline">¶</a></h2>
 <p>This package is a modified duplicate of the <a class="reference external" href="https://github.com/audreyfeldroy/cookiecutter-pypackage">audreyr/cookiecutter-pypackage</a>
 project template</p>
 </div>

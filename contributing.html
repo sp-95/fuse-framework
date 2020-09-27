@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
-    <link rel="prev" title="Console Script Setup" href="console_script_setup.html" /> 
+    <link rel="next" title="PyPI Release Checklist" href="pypi_release_checklist.html" />
+    <link rel="prev" title="PyPI Setup" href="pypi_setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,16 +86,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="readme.html">Fusemachines Python Framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pypi_release_checklist.html">PyPI Release Checklist</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Basic Features</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="prompts.html">Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="console_script_setup.html">Console Script Setup</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Advanced Features</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pypi_setup.html">PyPI Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="console_script_setup.html">Console Script Setup</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
 <ul class="current">
@@ -114,6 +113,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#deploying">Deploying</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="pypi_release_checklist.html">PyPI Release Checklist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
@@ -212,7 +212,7 @@ and such.</p>
 <div class="section" id="submit-feedback">
 <h3>Submit Feedback<a class="headerlink" href="#submit-feedback" title="Permalink to this headline">¶</a></h3>
 <p>The best way to send feedback is to file an issue at
-<a class="reference external" href="https://github.com/sp-fm/fuse-cookiecutter/issues">https://github.com/sp-fm/fuse-cookiecutter/issues</a>.</p>
+<a class="reference external" href="https://github.com/sp-fm/fuse-framework/issues">https://github.com/sp-fm/fuse-framework/issues</a>.</p>
 <p>If you are proposing a new feature:</p>
 <ul class="simple">
 <li><p>Explain in detail how it would work.</p></li>
@@ -248,7 +248,7 @@ local development by typing:</p>
 <li><p>When you’re done making changes, check that your changes pass flake8. Since,
 this package contains mostly templates the flake should be run for tests
 directory:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> flake8 ./tests
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> flake8 ./tests --config<span class="o">=</span>pyproject.toml
 </pre></div>
 </div>
 </li>
@@ -344,6 +344,7 @@ committed (including an entry in CHANGELOG.rst). Then run:</p>
 </div>
 </div></blockquote>
 <p>Travis will then deploy to PyPI if tests pass.</p>
+<p>See <a class="reference internal" href="pypi_release_checklist.html#pypi-release-checklist"><span class="std std-ref">PyPI Release Checklist</span></a> for more information.</p>
 </div>
 </div>
 
@@ -355,10 +356,10 @@ committed (including an entry in CHANGELOG.rst). Then run:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pypi_release_checklist.html" class="btn btn-neutral float-right" title="PyPI Release Checklist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="console_script_setup.html" class="btn btn-neutral float-left" title="Console Script Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pypi_setup.html" class="btn btn-neutral float-left" title="PyPI Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
