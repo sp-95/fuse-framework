@@ -4,13 +4,14 @@
 Console Script Setup
 ====================
 
-Your package includes a console script using Click.
+Your package includes a console script using ``fire``.
 
 How It Works
 ------------
 
-Cookiecutter will add a file 'cli.py' in the project_slug subdirectory. An entry
-point is added to pyproject.toml that points to the main function in cli.py.
+Cookiecutter will add a file 'cli.py' in the module ``dynaconf`` in the project_slug
+subdirectory. An entry point is added to pyproject.toml that points to the main function
+in 'cli.py'.
 
 Usage
 ------------
@@ -30,5 +31,5 @@ The script will be generated with output for no arguments and --help.
 More Details
 ------------
 
-You can read more about Click at:
-http://click.pocoo.org/
+You can read more about fire at:
+https://google.github.io/python-fire/

@@ -39,7 +39,7 @@ Submit Feedback
 ~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at
-https://github.com/sp-fm/fuse-cookiecutter/issues.
+https://github.com/sp-fm/fuse-framework/issues.
 
 If you are proposing a new feature:
 
@@ -82,7 +82,7 @@ installed and ready to go.
 
    .. code-block:: console
 
-        $ flake8 ./tests
+        $ flake8 ./tests --config=pyproject.toml
 
 #. The next step would be to run the test cases. `fuse-framework` uses pytest,
    you can run PyTest. Before you run pytest you should ensure all dependancies
@@ -189,6 +189,8 @@ committed (including an entry in CHANGELOG.rst). Then run:
          $ git push --tags
 
 Travis will then deploy to PyPI if tests pass.
+
+See :ref:`pypi-release-checklist` for more information.
 
 .. poetry: https://python-poetry.org/docs/
 .. git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git

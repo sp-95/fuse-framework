@@ -82,7 +82,7 @@ for local development. Please note this documentation assumes you already have
 
    .. code-block:: console
 
-        $ flake8 ./tests
+        $ flake8 ./tests --config=pyproject.toml
 
 #. The next step would be to run the test cases. `fuse-framework` uses pytest,
    you can run PyTest. Before you run pytest you should ensure all dependancies

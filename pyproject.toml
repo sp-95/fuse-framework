@@ -36,6 +36,10 @@ toml = "*"
 PyYAML = "*"
 pre-commit = "*"
 
+[flake8]
+max-line-length = 88
+max-complexity = 10
+
 [build-system]
 requires = ["poetry-core>=1.0.0a5"]
 build-backend = "poetry.core.masonry.api"
