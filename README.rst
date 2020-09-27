@@ -15,18 +15,21 @@ Cookiecutter_ template for Fusemachines Python Framework.
 Features
 --------
 
-* Dependency tracking using poetry_
-* Logging with loguru_
-* Command-line interface using fire_
-* dynaconf_ for Configuration Management
-* Git hooks by pre_commit_hooks_
-* Testing setup with ``pytest``
-* Linting provided by flake8_ [executed by Tox]
-* Sphinx_ docs: Documentation ready for generation with, for example, `Read the Docs`_
-* Tox_ testing: Setup to easily test for Python 3.7 and 3.8
-* Travis-CI_: Ready for Travis Continuous Integration testing
-* Auto-release to PyPI_ when you push a new tag to master (optional)
+* `Editor Config`_: Maintains Code Consistency
+* poetry_: Dependency Management
+* loguru_: Logging
+* fire_: Command-line Interface
+* dynaconf_: Configuration Management
+* pre_commit_hooks_: Git hooks
+* pytest_ and coverage_: Python Testing and Code Coverage
+* black_ and flake8_: Linting
+* mypy_: Type Hinting
+* Sphinx_: Generates documents automatically
+* Tox_: Automated and Standardized testing
 * GitHub issue templates
+* `Travis CI`_: Continuous Integration
+* `GitHub Pages`_: Documentation Hosting
+* PyPi_: Auto-release when you push a new tag to master (optional)
 
 Quickstart
 ----------
@@ -62,7 +65,7 @@ where ``mypackage`` is the name of the project that was generated.
 Then:
 
 * Create a repo and put it there.
-* Add the repo to your Travis-CI_ account.
+* Add the repo to your `Travis CI`_ account.
 * Generate the docs by pushing your first commit to master.
 * Release your package by pushing a new tag to master.
 
@@ -75,16 +78,21 @@ This package is a modified duplicate of the `audreyr/cookiecutter-pypackage`_
 project template
 
 .. _Cookiecutter: https://github.com/cookiecutter/cookiecutter
+.. _Editor Config: https://editorconfig.org/
 .. _poetry: https://python-poetry.org/docs/
 .. _loguru: https://loguru.readthedocs.io/en/stable/
 .. _fire: https://google.github.io/python-fire/guide/
 .. _dynaconf: https://www.dynaconf.com/
 .. _pre_commit_hooks: https://github.com/pre-commit/pre-commit-hooks
+.. _pytest: https://docs.pytest.org/en/stable/
+.. _coverage: https://coverage.readthedocs.io/en/coverage-5.3/
+.. _black: https://black.readthedocs.io/en/stable/
 .. _flake8: https://pypi.org/project/flake8/
+.. _mypy: http://mypy-lang.org/
 .. _Sphinx: http://sphinx-doc.org/
-.. _Read the Docs: https://readthedocs.io/
 .. _Tox: http://testrun.org/tox/
-.. _Travis-CI: http://travis-ci.org/
+.. _Travis CI: http://travis-ci.org/
+.. _GitHub Pages: https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages
 .. _PyPi: https://pypi.python.org/pypi
 .. _`fuse-framework tutorial`: https://sp-fm.github.io/fuse-framework/tutorial.html
 .. _audreyr/cookiecutter-pypackage: https://github.com/audreyfeldroy/cookiecutter-pypackage
