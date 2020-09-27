@@ -3,7 +3,7 @@ from typing import Dict
 import fire
 from loguru import logger
 
-from {{ cookiecutter.project_slug }}.dynaconf.services.main import settings
+from {{ cookiecutter.project_slug }}.dynaconf import settings
 
 
 class Main:
