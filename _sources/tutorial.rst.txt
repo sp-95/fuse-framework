@@ -26,11 +26,11 @@ Step 2: Generate Your Package
 
 Now it's time to generate your Python package.
 
-Use cookiecutter, pointing it at the fuse-standard repo.
+Use cookiecutter, pointing it at the fuse-framework repo.
 
 .. code-block:: console
 
-    $ cookiecutter https://github.com/sp-fm/fuse-standard.git
+    $ cookiecutter https://github.com/sp-fm/fuse-framework.git
 
 You'll be asked to enter a bunch of values to set the package up. If you don't
 know what to enter, stick with the defaults.
@@ -218,9 +218,9 @@ Visit our :ref:`troubleshooting` page for help. If that doesn't help, go to our
 `Issues`_ page and create a new Issue. Be sure to give as much information as
 possible.
 
-.. _`Issues`: https://github.com/sp-fm/fuse-standard/issues
+.. _`Issues`: https://github.com/sp-fm/fuse-framework/issues
 
 .. note:: Did you find any of these instructions confusing? `Edit this file`_
           and submit a pull request with your improvements!
 
-.. _`Edit this file`: https://github.com/sp-fm/fuse-standard/blob/master/docs/tutorial.rst
+.. _`Edit this file`: https://github.com/sp-fm/fuse-framework/blob/master/docs/tutorial.rst
