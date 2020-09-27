@@ -1,15 +1,15 @@
-=====================
-FuseMachines Standard
-=====================
+=============================
+Fusemachines Python Framework
+=============================
 
-.. image:: https://travis-ci.com/sp-fm/fuse-standard.svg?branch=fuse
-    :target: https://travis-ci.com/github/sp-fm/fuse-standard
+.. image:: https://travis-ci.com/sp-fm/fuse-framework.svg?branch=fuse
+    :target: https://travis-ci.com/github/sp-fm/fuse-framework
     :alt: Travis CI Build Status
 
-Cookiecutter_ template for a standard FuseMachines Python package.
+Cookiecutter_ template for Fusemachines Python Framework.
 
-* GitHub repo: https://github.com/sp-fm/fuse-standard
-* Documentation: https://sp-fm.github.io/fuse-standard/
+* GitHub repo: https://github.com/sp-fm/fuse-framework
+* Documentation: https://sp-fm.github.io/fuse-framework/
 * Free software: BSD license
 
 Features
@@ -39,7 +39,7 @@ Generate a Python package project:
 
 .. code-block:: console
 
-    $ cookiecutter https://github.com/sp-fm/fuse-standard.git
+    $ cookiecutter https://github.com/sp-fm/fuse-framework.git
 
 Then:
 
@@ -48,7 +48,7 @@ Then:
 * Install the dev requirements into a virtualenv. (``poetry install``)
 * Release your package by pushing a new tag to master.
 
-For more details, see the `fuse-standard tutorial`_.
+For more details, see the `fuse-framework tutorial`_.
 
 Acknowledgement
 ---------------
@@ -65,5 +65,5 @@ project template
 .. _poetry: https://python-poetry.org/docs/
 .. _flake8: https://pypi.org/project/flake8/
 .. _pre_commit_hooks: https://github.com/pre-commit/pre-commit-hooks
-.. _`fuse-standard tutorial`: https://sp-fm.github.io/fuse-standard/tutorial.html
+.. _`fuse-framework tutorial`: https://sp-fm.github.io/fuse-framework/tutorial.html
 .. _audreyr/cookiecutter-pypackage: https://github.com/audreyfeldroy/cookiecutter-pypackage

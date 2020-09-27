@@ -31,7 +31,7 @@ Look through the GitHub issues for features that are tagged with "enhancement".
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-FuseMachines Standard could always use more documentation, whether as part of
+Fusemachines Python Framework could always use more documentation, whether as part of
 the official docs, in docstrings, or even on the web in blog posts, articles,
 and such.
 
@@ -49,16 +49,16 @@ If you are proposing a new feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `fuse-standard` for local development.
+Ready to contribute? Here's how to set up `fuse-framework` for local development.
 Please note this documentation assumes you already have `poetry` and `git`
 installed and ready to go.
 
-#. Clone the `fuse-standard` repo locally:
+#. Clone the `fuse-framework` repo locally:
 
    .. code-block:: console
 
         $ cd path_for_the_repo
-        $ git clone git@github.com:sp-fm/fuse-standard.git
+        $ git clone git@github.com:sp-fm/fuse-framework.git
 
 #. Assuming you have poetry installed, you can create a new environment for your
    local development by typing:
@@ -84,7 +84,7 @@ installed and ready to go.
 
         $ flake8 ./tests
 
-#. The next step would be to run the test cases. `fuse-standard` uses pytest,
+#. The next step would be to run the test cases. `fuse-framework` uses pytest,
    you can run PyTest. Before you run pytest you should ensure all dependancies
    are installed:
 
@@ -128,7 +128,7 @@ Before you submit a pull request, check that it meets these guidelines:
    the list in README.rst.
 
 #. The pull request should work for Python 3.7 and 3.8. Check
-   https://travis-ci.com/sp-fm/fuse-standard/pull_requests and make sure that
+   https://travis-ci.com/sp-fm/fuse-framework/pull_requests and make sure that
    the tests pass for all supported Python versions.
 
 Add a New Test

@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "fuse-standard"
+name = "fuse-framework"
 version = "0.1.0"
-description = "FuseMachines Python Standardization"
+description = "Fusemachines Python Framework"
 authors = ["Shashanka Prajapati <shashanka@fusemachines.com>"]
 license = "BSD"
 readme = "README.rst"
-repository = "https://github.com/sp-fm/fuse-standard"
-documentation = "https://sp-fm.github.io/fuse-standard"
+repository = "https://github.com/sp-fm/fuse-framework"
+documentation = "https://sp-fm.github.io/fuse-framework"
 keywords = ["cookiecutter", "template", "package"]
 classifiers = [
     "Development Status :: 4 - Beta",

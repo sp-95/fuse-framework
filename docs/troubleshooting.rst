@@ -7,7 +7,7 @@ Troubleshooting
 .. note:: Can you help improve this file? `Edit this file`_
           and submit a pull request with your improvements!
 
-.. _`Edit this file`: https://github.com/sp-fm/fuse-standard/blob/master/docs/troubleshooting.rst
+.. _`Edit this file`: https://github.com/sp-fm/fuse-framework/blob/master/docs/troubleshooting.rst
 
 Windows Issues
 --------------
