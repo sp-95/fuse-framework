@@ -41,14 +41,14 @@ Step 3: Setup Virtual Environment
 
 .. code-block:: console
 
-    $ pip install --user poetry
+    $ pip install -U poetry
 
 If you want to install prerelease versions, you can do so by passing --pre
 option.
 
 .. code-block:: console
 
-    $ pip install --user poetry --pre
+    $ pip install -U poetry --pre
 
 Activate your environment.
 
