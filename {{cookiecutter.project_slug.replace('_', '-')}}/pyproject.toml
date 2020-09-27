@@ -42,19 +42,42 @@ dynaconf = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
-pytest-cov = "*"
+coverage = "*"
 tox = "*"
 flake8 = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
-tomlkit = "*"
+toml = "*"
 pre-commit = "*"
 
 [tool.poetry.scripts]
 {{ cookiecutter.project_slug.replace('_', '-') }} = "{{ cookiecutter.project_slug }}.cli:main"
 
-[pytest]
+[tool.pytest.ini_options]
 testpaths = "tests"
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_lines = [
+    # Have to re-enable the standard pragma
+    "pragma: no cover",
+
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "if self.debug",
+
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+]
+ignore_errors = true
 
 [flake8]
 max-line-length = 88

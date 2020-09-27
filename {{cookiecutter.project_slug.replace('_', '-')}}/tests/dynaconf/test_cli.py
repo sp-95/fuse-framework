@@ -6,11 +6,32 @@ from dynaconf.vendor.box.exceptions import BoxKeyError
 from {{ cookiecutter.project_slug }}.dynaconf.cli import Main
 
 
-def test_command_line_interface(caplog):
-    """Test the CLI"""
+class TestMain:
+    @staticmethod
+    def test_project_name(caplog):
+        project_name = Main.project_name()
+        assert "Project Name: " in caplog.text
+        assert project_name == "{{ cookiecutter.project_slug.replace('_', '-') }}"
 
-    Main.package_name()
-    assert "Package Name: " in caplog.text
+    @staticmethod
+    def test_database(caplog):
+        with pytest.raises(BoxKeyError):
+            Main.database(key="test")
 
-    with pytest.raises(BoxKeyError):
-        Main.database(key="test")
+        # dynaconf sets your default env to 'development'
+        database = Main.database()
+        assert "Database: " in caplog.text
+        assert database == {
+            "host": "localhost",
+            "user": "dev_user",
+            "password": "dev_password",
+        }
+
+        database = Main("default").database("user")
+        assert "User: " in caplog.text
+        assert database == {"user": "default"}
+
+        # Once your env is set it won't change
+        database = Main.database("user")
+        assert "User: " in caplog.text
+        assert database == {"user": "default"}

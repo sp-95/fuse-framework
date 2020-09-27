@@ -1,14 +1,14 @@
 default:
-    name: fuse-utils
-    version: "1.0.0"
+    name: {{ cookiecutter.project_slug.replace('_', '-') }}
+    version: {{ cookiecutter.version }}
     authors:
-        - "Shashanka Prajapati"
+        - {{ cookiecutter.full_name }}
     python: 3.7
     dev: false
     PORT: 8080
     DB_NAME: mydb.db
     database:
-        host: server.com
+        host: localhost
         user: default
     plugins:
         - core
