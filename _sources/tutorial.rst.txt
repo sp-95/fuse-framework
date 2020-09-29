@@ -1,14 +1,14 @@
 Tutorial
 ========
 
-To start with, you will need a `GitHub account`_ and an account on `PyPI`_.
+To start with, you will need a `GitHub account`_ and an account on `PyPI`_ (optional).
 Create these before you get started on this tutorial. If you are new to Git and
 GitHub, you should probably spend a few minutes on some of the tutorials at the
 top of the page at `GitHub Help`_.
 
-.. _`GitHub account`: https://github.com/
-.. _`PyPI`: https://pypi.python.org/pypi
-.. _`GitHub Help`: https://help.github.com/
+.. _GitHub account: https://github.com/
+.. _PyPI: https://pypi.python.org/pypi
+.. _GitHub Help: https://help.github.com/
 
 
 Step 1: Install Cookiecutter
@@ -122,7 +122,7 @@ Step 7: Create a GitHub Repo
 
 Go to your GitHub account and create a new repo named ``mypackage``, where
 ``mypackage`` matches the ``[project_slug]`` from your answers to running
-cookiecutter. This is so that Travis CI can find it when we get to Step 7.
+cookiecutter.
 
 You will find one folder named after the ``[project_slug]``. Move into this
 folder, and then setup git to use your GitHub repo and upload the code.
@@ -141,30 +141,22 @@ package name.
 You'll need an ssh key to push the repo. You can `Generate`_ a key or `Add`_ an
 existing one.
 
-.. _`Generate`: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-.. _`Add`: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+.. _Generate: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+.. _Add: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 
 
-Step 8: Set Up Travis CI
-------------------------
+Step 8: Set Up GitHub Actions
+-----------------------------
 
-`Travis CI org`_ [*]_ is a continuous integration tool used to prevent
-integration problems. Every commit to the master branch will trigger automated
-builds of the application.
+Automate, customize, and execute your software development workflows right in your
+repository with `GitHub Actions`_. You can discover, create, and share actions to
+perform any job you'd like, including CI/CD, and combine actions in a completely
+customized workflow.
 
-Log in using your Github credentials. It may take a few minutes for Travis CI to
-load up a list of all your GitHub repos. They will be listed with boxes to the
-left of the repo name, where the boxes have an ``X`` in them, meaning it is not
-connected to Travis CI.
+You only need an existing GitHub repository to create and run a GitHub Actions workflow.
+You workflow configurations are stored on `.github/workflows` directory.
 
-Add the public repo to your Travis CI account by clicking the ``X`` to switch it
-"on" in the box next to the ``mypackage`` repo.
-
-.. [*] For private projects go to `Travis CI com`_
-
-.. _`Travis CI org`: https://travis-ci.org/
-.. _`Travis CI com`: https://travis-ci.com/
-
+.. _GitHub Actions: https://docs.github.com/en/free-pro-team@latest/actions
 
 Step 9: Set Up the Docs
 --------------------------
@@ -186,7 +178,44 @@ JavaScript files straight from a repository on GitHub optionally runs the files
 through a build process, and publishes a website.
 
 You can host your site on GitHub's ``github.io`` domain or your custom
-domain. You can automatically host to `GitHub Pages using Travis CI`_.
+domain. You can automatically host to `GitHub Pages using Using GitHub Actions`_.
+
+Setup Deploy Keys
+~~~~~~~~~~~~~~~~~
+
+Generate your deploy key with the following command
+
+.. code-block:: console
+
+    $ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f ~/.ssh/gh-pages -N ""
+
+You will get 2 files:
+* gh-pages.pub (public key)
+* gh-pages     (private key)
+
+Install `xclip` if you haven't done so already
+
+.. code-block:: console
+
+    $ sudo apt install xclip -y
+
+Next, Go to *Repository Settings*
+
+Copy your public key
+
+.. code-block:: console
+
+    $ xclip -sel clip < ~/.ssh/gh-pages.pub
+
+Go to *Deploy Keys* and add your public key with the *Allow write access*
+
+Copy your private key
+
+.. code-block:: console
+
+    $ xclip -sel clip < ~/.ssh/gh-pages
+
+Go to *Secrets* and add your private key as `ACTIONS_DEPLOY_KEY`
 
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
@@ -194,7 +223,7 @@ domain. You can automatically host to `GitHub Pages using Travis CI`_.
 .. _Read the Docs Sphinx Theme: https://github.com/readthedocs/sphinx_rtd_theme
 .. _Read the Docs: https://readthedocs.org/
 .. _GitHub Pages: https://docs.github.com/en/github/working-with-github-pages/about-github-pages
-.. _GitHub Pages using Travis CI: https://docs.travis-ci.com/user/deployment/pages/
+.. _GitHub Pages using Using GitHub Actions: https://github.com/marketplace/actions/github-pages-action
 
 
 Step 10: Release on PyPI
@@ -218,9 +247,9 @@ Visit our :ref:`troubleshooting` page for help. If that doesn't help, go to our
 `Issues`_ page and create a new Issue. Be sure to give as much information as
 possible.
 
-.. _`Issues`: https://github.com/sp-fm/fuse-framework/issues
+.. _Issues: https://github.com/sp-fm/fuse-framework/issues
 
 .. note:: Did you find any of these instructions confusing? `Edit this file`_
           and submit a pull request with your improvements!
 
-.. _`Edit this file`: https://github.com/sp-fm/fuse-framework/blob/master/docs/tutorial.rst
+.. _Edit this file: https://github.com/sp-fm/fuse-framework/blob/master/docs/tutorial.rst

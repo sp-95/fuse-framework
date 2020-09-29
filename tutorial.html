@@ -93,8 +93,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#step-5-initialize-git">Step 5: Initialize Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-6-pre-commit-installation">Step 6: Pre-commit Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-7-create-a-github-repo">Step 7: Create a GitHub Repo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-8-set-up-travis-ci">Step 8: Set Up Travis CI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-9-set-up-the-docs">Step 9: Set Up the Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-8-set-up-github-actions">Step 8: Set Up GitHub Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-9-set-up-the-docs">Step 9: Set Up the Docs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup-deploy-keys">Setup Deploy Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#step-10-release-on-pypi">Step 10: Release on PyPI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#having-problems">Having problems?</a></li>
 </ul>
@@ -181,7 +184,7 @@
             
   <div class="section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
-<p>To start with, you will need a <a class="reference external" href="https://github.com/">GitHub account</a> and an account on <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a>.
+<p>To start with, you will need a <a class="reference external" href="https://github.com/">GitHub account</a> and an account on <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a> (optional).
 Create these before you get started on this tutorial. If you are new to Git and
 GitHub, you should probably spend a few minutes on some of the tutorials at the
 top of the page at <a class="reference external" href="https://help.github.com/">GitHub Help</a>.</p>
@@ -261,7 +264,7 @@ file. This is the list of <a class="reference external" href="https://pre-commit
 <h2>Step 7: Create a GitHub Repo<a class="headerlink" href="#step-7-create-a-github-repo" title="Permalink to this headline">¶</a></h2>
 <p>Go to your GitHub account and create a new repo named <code class="docutils literal notranslate"><span class="pre">mypackage</span></code>, where
 <code class="docutils literal notranslate"><span class="pre">mypackage</span></code> matches the <code class="docutils literal notranslate"><span class="pre">[project_slug]</span></code> from your answers to running
-cookiecutter. This is so that Travis CI can find it when we get to Step 7.</p>
+cookiecutter.</p>
 <p>You will find one folder named after the <code class="docutils literal notranslate"><span class="pre">[project_slug]</span></code>. Move into this
 folder, and then setup git to use your GitHub repo and upload the code.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git add .
@@ -276,22 +279,14 @@ package name.</p>
 <p>You’ll need an ssh key to push the repo. You can <a class="reference external" href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Generate</a> a key or <a class="reference external" href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Add</a> an
 existing one.</p>
 </div>
-<div class="section" id="step-8-set-up-travis-ci">
-<h2>Step 8: Set Up Travis CI<a class="headerlink" href="#step-8-set-up-travis-ci" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://travis-ci.org/">Travis CI org</a> <a class="footnote-reference brackets" href="#id2" id="id1">*</a> is a continuous integration tool used to prevent
-integration problems. Every commit to the master branch will trigger automated
-builds of the application.</p>
-<p>Log in using your Github credentials. It may take a few minutes for Travis CI to
-load up a list of all your GitHub repos. They will be listed with boxes to the
-left of the repo name, where the boxes have an <code class="docutils literal notranslate"><span class="pre">X</span></code> in them, meaning it is not
-connected to Travis CI.</p>
-<p>Add the public repo to your Travis CI account by clicking the <code class="docutils literal notranslate"><span class="pre">X</span></code> to switch it
-“on” in the box next to the <code class="docutils literal notranslate"><span class="pre">mypackage</span></code> repo.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">*</a></span></dt>
-<dd><p>For private projects go to <a class="reference external" href="https://travis-ci.com/">Travis CI com</a></p>
-</dd>
-</dl>
+<div class="section" id="step-8-set-up-github-actions">
+<h2>Step 8: Set Up GitHub Actions<a class="headerlink" href="#step-8-set-up-github-actions" title="Permalink to this headline">¶</a></h2>
+<p>Automate, customize, and execute your software development workflows right in your
+repository with <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/actions">GitHub Actions</a>. You can discover, create, and share actions to
+perform any job you’d like, including CI/CD, and combine actions in a completely
+customized workflow.</p>
+<p>You only need an existing GitHub repository to create and run a GitHub Actions workflow.
+You workflow configurations are stored on <cite>.github/workflows</cite> directory.</p>
 </div>
 <div class="section" id="step-9-set-up-the-docs">
 <h2>Step 9: Set Up the Docs<a class="headerlink" href="#step-9-set-up-the-docs" title="Permalink to this headline">¶</a></h2>
@@ -308,7 +303,32 @@ can work with any Sphinx project.</p>
 JavaScript files straight from a repository on GitHub optionally runs the files
 through a build process, and publishes a website.</p>
 <p>You can host your site on GitHub’s <code class="docutils literal notranslate"><span class="pre">github.io</span></code> domain or your custom
-domain. You can automatically host to <a class="reference external" href="https://docs.travis-ci.com/user/deployment/pages/">GitHub Pages using Travis CI</a>.</p>
+domain. You can automatically host to <a class="reference external" href="https://github.com/marketplace/actions/github-pages-action">GitHub Pages using Using GitHub Actions</a>.</p>
+<div class="section" id="setup-deploy-keys">
+<h3>Setup Deploy Keys<a class="headerlink" href="#setup-deploy-keys" title="Permalink to this headline">¶</a></h3>
+<p>Generate your deploy key with the following command</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&quot;</span><span class="k">$(</span>git config user.email<span class="k">)</span><span class="s2">&quot;</span> -f ~/.ssh/gh-pages -N <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>You will get 2 files:
+* gh-pages.pub (public key)
+* gh-pages     (private key)</p>
+<p>Install <cite>xclip</cite> if you haven’t done so already</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt install xclip -y
+</pre></div>
+</div>
+<p>Next, Go to <em>Repository Settings</em></p>
+<p>Copy your public key</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> xclip -sel clip &lt; ~/.ssh/gh-pages.pub
+</pre></div>
+</div>
+<p>Go to <em>Deploy Keys</em> and add your public key with the <em>Allow write access</em></p>
+<p>Copy your private key</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> xclip -sel clip &lt; ~/.ssh/gh-pages
+</pre></div>
+</div>
+<p>Go to <em>Secrets</em> and add your private key as <cite>ACTIONS_DEPLOY_KEY</cite></p>
+</div>
 </div>
 <div class="section" id="step-10-release-on-pypi">
 <h2>Step 10: Release on PyPI<a class="headerlink" href="#step-10-release-on-pypi" title="Permalink to this headline">¶</a></h2>

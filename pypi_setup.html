@@ -98,10 +98,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#configuring-pypi-credentials">Configuring PyPi Credentials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#packaging">Packaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#publishing-to-pypi">Publishing to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#travis-setup">Travis Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#github-actions-setup">GitHub Actions Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deploying-tags">Deploying tags</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#deploying-specific-branches">Deploying specific branches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#releasing-build-artifacts">Releasing build artifacts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#your-release-process">Your Release Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
 </ul>
@@ -184,11 +182,13 @@ push a new tag to the master branch.</p>
 <div class="section" id="configuring-pypi-credentials">
 <h2>Configuring PyPi Credentials<a class="headerlink" href="#configuring-pypi-credentials" title="Permalink to this headline">¶</a></h2>
 <p>To publish to PyPI, you can set your credentials for the repository named pypi.</p>
-<p>Note that it is recommended to use API tokens when uploading packages to PyPI. Once you have created a new token, you can tell Poetry to use it:</p>
+<p>Note that it is recommended to use API tokens when uploading packages to PyPI. Once you
+have created a new token, you can tell Poetry to use it:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry config pypi-token.pypi my-token
 </pre></div>
 </div>
-<p>If you still want to use your username and password, you can do so with the following call to config.</p>
+<p>If you still want to use your username and password, you can do so with the following
+call to config.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry config http-basic.pypi username password
 </pre></div>
 </div>
@@ -199,18 +199,22 @@ push a new tag to the master branch.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry build
 </pre></div>
 </div>
-<p>This command will package your library in two different formats: sdist which is the source format, and wheel which is a compiled package.</p>
+<p>This command will package your library in two different formats: sdist which is the
+source format, and wheel which is a compiled package.</p>
 <p>Once that’s done you are ready to publish your library</p>
 </div>
 <div class="section" id="publishing-to-pypi">
 <h2>Publishing to PyPI<a class="headerlink" href="#publishing-to-pypi" title="Permalink to this headline">¶</a></h2>
 <p>Alright, so now you can publish packages.</p>
-<p>Poetry will publish to PyPI by default. Anything that is published to PyPI is available automatically through Poetry.</p>
-<p>If we wanted to share a package with the Python community, we would publish on PyPI as well. Doing so is easy.</p>
+<p>Poetry will publish to PyPI by default. Anything that is published to PyPI is available
+automatically through Poetry.</p>
+<p>If we wanted to share a package with the Python community, we would publish on PyPI as
+well. Doing so is easy.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry publish
 </pre></div>
 </div>
-<p>This will package and publish the library to PyPI, at the condition that you are a registered user and you have configured your credentials properly.</p>
+<p>This will package and publish the library to PyPI, at the condition that you are a
+registered user and you have configured your credentials properly.</p>
 <p>The publish command does not execute build by default.</p>
 <p>If you want to build and publish your packages together, just pass the –build option.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry publish --build
@@ -218,62 +222,57 @@ push a new tag to the master branch.</p>
 </div>
 <p>Once this is done, your library will be available to anyone.</p>
 </div>
-<div class="section" id="travis-setup">
-<h2>Travis Setup<a class="headerlink" href="#travis-setup" title="Permalink to this headline">¶</a></h2>
-<p>Travis CI can automatically release your Python package to PyPI after a successful build.</p>
-<p>For a minimal configuration, generate a PyPI API token and add the following to your .travis.yml:</p>
-<div class="highlight-YAML notranslate"><div class="highlight"><pre><span></span><span class="nt">before_deploy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">poetry config pypi-token.pypi $PYPI_TOKEN</span>
-<span class="nt">deploy</span><span class="p">:</span>
-  <span class="nt">provider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">script</span>
-  <span class="nt">script</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">poetry publish --build</span>
+<div class="section" id="github-actions-setup">
+<h2>GitHub Actions Setup<a class="headerlink" href="#github-actions-setup" title="Permalink to this headline">¶</a></h2>
+<p>Github Actions can automatically release your Python package to PyPI after a successful
+build.</p>
+<p>For a minimal configuration, generate a PyPI API token and add it to the Secrets tab in
+your project settings in GitHub.</p>
+<div class="highlight-YAML notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Release</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+    <span class="nt">deploy</span><span class="p">:</span>
+        <span class="nt">runs-on</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+        <span class="nt">steps</span><span class="p">:</span>
+            <span class="p p-Indicator">-</span> <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+
+            <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+              <span class="nt">uses</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v2</span>
+              <span class="nt">with</span><span class="p">:</span>
+                  <span class="nt">python-version</span><span class="p">:</span> <span class="s">&quot;3.x&quot;</span>
+
+            <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install and set up Poetry</span>
+              <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+                  <span class="no">python -m pip install --upgrade pip</span>
+                  <span class="no">pip install --upgrade poetry --pre</span>
+                  <span class="no">poetry config virtualenvs.in-project true</span>
+
+            <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+              <span class="nt">run</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">poetry install</span>
+
+            <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build and publish</span>
+              <span class="nt">env</span><span class="p">:</span>
+                  <span class="nt">PYPI_TOKEN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ secrets.PYPI_TOKEN }}</span>
+              <span class="nt">run</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+                  <span class="no">poetry config pypi-token.pypi $PYPI_TOKEN</span>
+                  <span class="no">poetry publish --build</span>
 </pre></div>
 </div>
-<p>However, this would expose your PyPI API token to the world. We recommend you setup your PyPi API token as an environment variable for your repo in Travis CI.</p>
-<p>It is also possible, but not recommended, to use PyPI user and password, instead of a token.</p>
+<p>It is also possible, but not recommended, to use PyPI user and password, instead of a
+token.</p>
 </div>
 <div class="section" id="deploying-tags">
 <h2>Deploying tags<a class="headerlink" href="#deploying-tags" title="Permalink to this headline">¶</a></h2>
-<p>Most likely, you would only want to deploy to PyPI when a new version of your package is cut. To do this, you can tell Travis CI to only deploy on tagged commits, like so:</p>
-<div class="highlight-YAML notranslate"><div class="highlight"><pre><span></span><span class="nt">deploy</span><span class="p">:</span>
-  <span class="nt">provider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">script</span>
-  <span class="nt">script</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">poetry publish --build</span>
-  <span class="nt">on</span><span class="p">:</span>
-    <span class="nt">tags</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<p>Most likely, you would only want to deploy to PyPI when a new version of your package is
+cut. To do this, you can tell GitHub Actions to only deploy on tagged commits, like so:</p>
+<div class="highlight-YAML notranslate"><div class="highlight"><pre><span></span><span class="nt">on</span><span class="p">:</span>
+    <span class="nt">release</span><span class="p">:</span>
+        <span class="nt">types</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">created</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
-<p>If you tag a commit locally, remember to run git push –tags to ensure that your tags are uploaded to GitHub.</p>
-</div>
-<div class="section" id="deploying-specific-branches">
-<h2>Deploying specific branches<a class="headerlink" href="#deploying-specific-branches" title="Permalink to this headline">¶</a></h2>
-<p>You can explicitly specify the branch to release from with the on option:</p>
-<div class="highlight-YAML notranslate"><div class="highlight"><pre><span></span><span class="nt">deploy</span><span class="p">:</span>
-  <span class="nt">provider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">script</span>
-  <span class="nt">script</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">poetry publish --build</span>
-  <span class="nt">on</span><span class="p">:</span>
-    <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">production</span>
-</pre></div>
-</div>
-<p>Alternatively, you can also configure Travis CI to release from all branches:</p>
-<div class="highlight-YAML notranslate"><div class="highlight"><pre><span></span><span class="nt">deploy</span><span class="p">:</span>
-  <span class="nt">provider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">script</span>
-  <span class="nt">script</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">poetry publish --build</span>
-  <span class="nt">on</span><span class="p">:</span>
-    <span class="nt">all_branches</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-</pre></div>
-</div>
-<p>By default, Travis CI will only release from the master branch.</p>
-<p>Builds triggered from Pull Requests will never trigger a release.</p>
-</div>
-<div class="section" id="releasing-build-artifacts">
-<h2>Releasing build artifacts<a class="headerlink" href="#releasing-build-artifacts" title="Permalink to this headline">¶</a></h2>
-<p>After your tests ran and before the release, Travis CI will clean up any additional files and changes you made.</p>
-<p>Maybe that is not what you want, as you might generate some artifacts that are supposed to be released, too. There is an option to skip the clean up:</p>
-<div class="highlight-YAML notranslate"><div class="highlight"><pre><span></span><span class="nt">deploy</span><span class="p">:</span>
-  <span class="nt">provider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">script</span>
-  <span class="nt">script</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">poetry publish --build</span>
-  <span class="nt">skip_cleanup</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-</pre></div>
-</div>
+<p>If you tag a commit locally, remember to run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--tags</span></code> to ensure that your
+tags are uploaded to GitHub.</p>
 </div>
 <div class="section" id="your-release-process">
 <h2>Your Release Process<a class="headerlink" href="#your-release-process" title="Permalink to this headline">¶</a></h2>
@@ -295,8 +294,8 @@ push a new tag to the master branch.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://python-poetry.org/docs/repositories/">Configuring PyPi Credentials</a></p></li>
 <li><p><a class="reference external" href="https://python-poetry.org/docs/libraries/">Publishing to PyPi</a></p></li>
-<li><p><a class="reference external" href="https://docs.travis-ci.com/user/deployment/pypi/">Travis Setup</a></p></li>
-<li><p><a class="reference external" href="https://github.com/python-poetry/poetry/issues/366">Poetry and Travis CI – Best Practices</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/actions/guides/building-and-testing-python">Building Python packages with GitHub Actions</a></p></li>
+<li><p><a class="reference external" href="https://github.com/python-poetry/poetry/actions/runs/30094511/workflow">Poetry GitHub Actions workflow</a></p></li>
 </ul>
 </div>
 </div>
