@@ -2,9 +2,13 @@
 Fusemachines Python Framework
 =============================
 
-.. image:: https://travis-ci.com/sp-fm/fuse-framework.svg?branch=fuse
-    :target: https://travis-ci.com/github/sp-fm/fuse-framework
-    :alt: Travis CI Build Status
+.. image:: https://github.com/sp-fm/fuse-framework/workflows/Tests/badge.svg
+    :target: https://github.com/sp-fm/fuse-framework/actions?query=workflow%3ATests
+    :alt: Tests
+
+.. image:: https://github.com/sp-fm/fuse-framework/workflows/Documentation/badge.svg
+    :target: https://github.com/sp-fm/fuse-framework/actions?query=workflow%3ADocumentation
+    :alt: Documentation
 
 Cookiecutter_ template for Fusemachines Python Framework.
 
@@ -27,9 +31,9 @@ Features
 * Sphinx_: Generates documents automatically
 * Tox_: Automated and Standardized testing
 * GitHub issue templates
-* `Travis CI`_: Continuous Integration
+* `GitHub Actions`_: Continuous Integration
 * `GitHub Pages`_: Documentation Hosting
-* PyPi_: Auto-release when you push a new tag to master (optional)
+* PyPi_: Auto-release when you make a release (optional)
 
 Quickstart
 ----------
@@ -65,7 +69,6 @@ where ``mypackage`` is the name of the project that was generated.
 Then:
 
 * Create a repo and put it there.
-* Add the repo to your `Travis CI`_ account.
 * Generate the docs by pushing your first commit to master.
 * Release your package by pushing a new tag to master.
 
@@ -91,8 +94,8 @@ project template
 .. _mypy: http://mypy-lang.org/
 .. _Sphinx: http://sphinx-doc.org/
 .. _Tox: http://testrun.org/tox/
-.. _Travis CI: http://travis-ci.org/
+.. _GitHub Actions: https://docs.github.com/en/free-pro-team@latest/actions
 .. _GitHub Pages: https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages
 .. _PyPi: https://pypi.python.org/pypi
-.. _`fuse-framework tutorial`: https://sp-fm.github.io/fuse-framework/tutorial.html
+.. _fuse-framework tutorial: https://sp-fm.github.io/fuse-framework/tutorial.html
 .. _audreyr/cookiecutter-pypackage: https://github.com/audreyfeldroy/cookiecutter-pypackage

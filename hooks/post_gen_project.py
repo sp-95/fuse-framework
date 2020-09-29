@@ -8,7 +8,10 @@ def remove_file(filepath):
     os.remove(os.path.join(PROJECT_DIRECTORY, filepath))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
-    if 'Not open source' == '{{ cookiecutter.open_source_license }}':
-        remove_file('LICENSE')
+    if "n" in "{{ cookiecutter.pypi_deployment|lower }}":
+        remove_file(".github/workflows/upload-python-package.yml")
+
+    if "Not open source" == "{{ cookiecutter.open_source_license }}":
+        remove_file("LICENSE")

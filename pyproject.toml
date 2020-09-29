@@ -2,8 +2,8 @@
 name = "fuse-framework"
 version = "0.1.0"
 description = "Fusemachines Python Framework"
-authors = ["Shashanka Prajapati <shashanka@fusemachines.com>"]
 license = "BSD"
+authors = ["Shashanka Prajapati <shashanka@fusemachines.com>"]
 readme = "README.rst"
 repository = "https://github.com/sp-fm/fuse-framework"
 documentation = "https://sp-fm.github.io/fuse-framework"
@@ -30,15 +30,21 @@ pytest = "*"
 tox = "*"
 cookiecutter = "*"
 pytest-cookies = "*"
-sphinx = "*"
 sphinx-rtd-theme = "*"
 toml = "*"
 PyYAML = "*"
 pre-commit = "*"
 
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/sp-fm/fuse-framework/issues"
+
 [flake8]
 max-line-length = 88
 max-complexity = 10
+per-file-ignores = """
+    # imported but unused
+    __init__.py: F401
+"""
 
 [build-system]
 requires = ["poetry-core>=1.0.0a5"]

@@ -6,7 +6,6 @@ import sys
 from contextlib import contextmanager
 
 import pytest
-import yaml
 from cookiecutter.utils import rmtree
 
 
@@ -107,17 +106,16 @@ def test_bake_and_run_tests(cookies, extra_context):
         print("test_bake_and_run_tests path", str(result.project))
 
 
-def test_bake_without_travis_pypi_setup(cookies):
+def test_bake_without_pypi_setup(cookies):
     with bake_in_temp_dir(
         cookies,
-        extra_context={"use_pypi_deployment_with_travis": "n"},
+        extra_context={"pypi_deployment": "n"},
     ) as result:
-        result_travis_config = yaml.load(
-            result.project.join(".travis.yml").open(),
-            Loader=yaml.FullLoader,
-        )
-        assert "deploy" not in result_travis_config
-        assert "python" == result_travis_config["language"]
+        assert "Release" not in result.project.join("README.rst").read()
+
+        github_workflow_path = result.project.join(".github").join("workflows")
+        github_workflow_files = [f.basename for f in github_workflow_path.listdir()]
+        assert "upload-python-package.yml" not in github_workflow_files
 
 
 def test_make_help(cookies):

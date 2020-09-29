@@ -4,11 +4,22 @@
 {% for _ in cookiecutter.project_name %}={% endfor %}
 
 {% if is_open_source %}
+.. image:: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/workflows/Tests/badge.svg
+    :target: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/actions?query=workflow%3ATests
+    :alt: Tests
+
+.. image:: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/workflows/Documentation/badge.svg
+    :target: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/actions?query=workflow%3ADocumentation
+    :alt: Documentation
+
+{% if cookiecutter.pypi_deployment == 'y' -%}
+.. image:: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/workflows/Release/badge.svg
+    :target: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/actions?query=workflow%3ARelease
+    :alt: Release
+
 .. image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug.replace('_', '-') }}.svg
         :target: https://pypi.python.org/pypi/{{ cookiecutter.project_slug.replace('_', '-') }}
-
-.. image:: https://img.shields.io/travis/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}.svg
-        :target: https://travis-ci.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}
+{%- endif %}
 {%- endif %}
 
 {{ cookiecutter.project_short_description }}

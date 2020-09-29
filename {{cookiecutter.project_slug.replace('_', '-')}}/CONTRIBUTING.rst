@@ -128,7 +128,7 @@ Before you submit a pull request, check that it meets these guidelines:
    the list in README.rst.
 
 #. The pull request should work for Python 3.7 and 3.8. Check
-   https://travis-ci.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/pull_requests
+   https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/actions?query=workflow%3ATests
    and make sure that the tests pass for all supported Python versions.
 
 Add a New Test
@@ -188,4 +188,6 @@ committed (including an entry in CHANGELOG.rst). Then run:
          $ git tag `poetry version -s`
          $ git push --tags
 
-Travis will then deploy to PyPI if tests pass.
+{% if cookiecutter.pypi_deployment == 'y' -%}
+GitHub Actions will then deploy to PyPI once you make a release if tests pass.
+{%- endif %}

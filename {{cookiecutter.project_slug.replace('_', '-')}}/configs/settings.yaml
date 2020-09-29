@@ -29,7 +29,9 @@ development:
         - test.sh
         - deploy.sh
         - dynaconf_merge_unique
-#    DB_PATH: "@format {env[HOME]}/{this.current_env}/{this.DB_NAME}" # Change to jinja as currently format doesn't work with setenv
+    {% raw -%}
+    DB_PATH: "@jinja {{env.HOME}}/{{this.current_env | lower}}/{{this.DB_NAME}}"
+    {%- endraw %}
 
 production:
     database:
