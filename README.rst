@@ -7,7 +7,7 @@ Fusemachines Python Framework
     :alt: Tests
 
 .. image:: https://github.com/sp-fm/fuse-framework/workflows/Documentation/badge.svg
-    :target: https://github.com/sp-fm/fuse-framework/actions?query=workflow%3ADocumentation
+    :target: https://sp-fm.github.io/fuse-framework/
     :alt: Documentation
 
 Cookiecutter_ template for Fusemachines Python Framework.

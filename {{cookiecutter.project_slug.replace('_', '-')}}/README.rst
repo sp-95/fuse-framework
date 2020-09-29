@@ -9,12 +9,12 @@
     :alt: Tests
 
 .. image:: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/workflows/Documentation/badge.svg
-    :target: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/actions?query=workflow%3ADocumentation
+    :target: https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug.replace('_', '-') }}/
     :alt: Documentation
 
 {% if cookiecutter.pypi_deployment == 'y' -%}
 .. image:: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/workflows/Release/badge.svg
-    :target: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/actions?query=workflow%3ARelease
+    :target: https://pypi.python.org/pypi/{{ cookiecutter.project_slug.replace('_', '-') }}
     :alt: Release
 
 .. image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug.replace('_', '-') }}.svg
