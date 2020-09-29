@@ -12,9 +12,9 @@ Fusemachines Python Framework
 
 Cookiecutter_ template for Fusemachines Python Framework.
 
-* GitHub repo: https://github.com/sp-fm/fuse-framework
-* Documentation: https://sp-fm.github.io/fuse-framework/
-* Free software: BSD license
+* **Source Code**: https://github.com/sp-fm/fuse-framework
+* **Documentation**: https://sp-fm.github.io/fuse-framework/
+* **Bug Reports**: https://github.com/sp-fm/fuse-framework/issues
 
 Features
 --------
@@ -33,44 +33,42 @@ Features
 * GitHub issue templates
 * `GitHub Actions`_: Continuous Integration
 * `GitHub Pages`_: Documentation Hosting
-* PyPi_: Auto-release when you make a release (optional)
+* PyPi_: Auto-deploy when you make a release (optional)
 
 Quickstart
 ----------
 
-Install the latest Cookiecutter if you haven't installed it yet (this requires
-Cookiecutter 1.4.0 or higher):
+#. Install the latest Cookiecutter if you haven't installed it yet (this requires
+   Cookiecutter 1.4.0 or higher):
 
-.. code-block:: console
+   .. code-block:: console
 
-    $ pip install -U cookiecutter
+        $ pip install -U cookiecutter
 
-Install the prerelease version of poetry
+#. Install the prerelease version of poetry
 
-.. code-block:: console
+   .. code-block:: console
 
-    $ pip install -U poetry --pre
+        $ pip install -U poetry --pre
 
-Generate a Python package project:
+#. Generate a Python package project:
 
-.. code-block:: console
+   .. code-block:: console
 
-    $ cookiecutter https://github.com/sp-fm/fuse-framework.git
+        $ cookiecutter https://github.com/sp-fm/fuse-framework.git
 
-Go to the generated project and run the initialization process:
+#. Go to the generated project and run the initialization process:
 
-.. code-block:: console
+   .. code-block:: console
 
-    $ cd mypackage
-    $ make init
+        $ cd mypackage
+        $ make init
 
-where ``mypackage`` is the name of the project that was generated.
+   where ``mypackage`` is the name of the project that was generated.
 
-Then:
-
-* Create a repo and put it there.
-* Generate the docs by pushing your first commit to master.
-* Release your package by pushing a new tag to master.
+#. Create a repo and put it there.
+#. Generate the docs by pushing your first commit to master.
+#. Deploy your package to PyPi_ by pushing a tag and creating a release.
 
 For more details, see the `fuse-framework tutorial`_.
 

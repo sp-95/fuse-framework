@@ -113,9 +113,14 @@ def test_bake_without_pypi_setup(cookies):
     ) as result:
         assert "Release" not in result.project.join("README.rst").read()
 
-        github_workflow_path = result.project.join(".github").join("workflows")
+        github_workflow_path = result.project.join(".github", "workflows")
         github_workflow_files = [f.basename for f in github_workflow_path.listdir()]
         assert "upload-python-package.yml" not in github_workflow_files
+
+        docs_path = result.project.join("docs")
+        docs_files = [f.basename for f in docs_path.listdir()]
+        assert "pypi_release_checklist.rst" not in docs_files
+        assert "pypi_release_checklist" not in docs_path.join("index.rst").read()
 
 
 def test_make_help(cookies):

@@ -20,8 +20,10 @@ Welcome to {{ cookiecutter.project_name }}'s documentation!
    :caption: Extra
 
    contributing
+{% if cookiecutter.pypi_deployment == 'y' -%}
+   pypi_release_checklist
+{%- endif %}
    authors
-   changelog
 
 Indices and tables
 ==================

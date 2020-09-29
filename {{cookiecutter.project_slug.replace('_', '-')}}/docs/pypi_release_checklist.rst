@@ -15,11 +15,11 @@ For Every Release
         $ git add CHANGELOG.rst
         $ git commit -m "Changelog for upcoming release 0.1.1."
 
-#. Update version number (can also be patch or major)
+#. Update version number (can also be minor or major)
 
    .. code-block:: console
 
-        $ poetry version minor
+        $ poetry version patch
 
 #. Install the package again for local development, but with the new version number:
 
@@ -33,21 +33,34 @@ For Every Release
 
         $ tox
 
+#. Create a tag:
+
+   .. code-block:: console
+
+        $ git tag `poetry version -s`
+
 #. Push the commit:
 
    .. code-block:: console
 
         $ git push
 
-#. Push the tags, creating the new release on both GitHub and PyPI:
+#. Push the tags:
 
    .. code-block:: console
 
         $ git push --tags
 
-#. Check the PyPI listing page to make sure that the README, release notes, and roadmap display properly. If not, try one of these:
+#. Create a release on GitHub at
+   https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/releases.
+   Paste the change logs into the release's description, and come up with a title for
+   the release.
 
-    #. Copy and paste the RestructuredText into http://rst.ninjs.org/ to find out what broke the formatting.
+#. Check the PyPI listing page to make sure that the README, release notes, and roadmap
+   display properly. If not, try one of these:
+
+    #. Copy and paste the RestructuredText into http://rst.ninjs.org/ to find out what
+       broke the formatting.
 
     #. Check your long_description locally:
 
@@ -57,5 +70,3 @@ For Every Release
             $ python -m readme_renderer PROBLEM.rst >/dev/null
 
        Replace PROBLEM.rst with the name of the file you are having trouble with
-
-#. Edit the release on GitHub (e.g. https://github.com/audreyr/cookiecutter/releases). Paste the release notes into the release's release page, and come up with a title for the release.
