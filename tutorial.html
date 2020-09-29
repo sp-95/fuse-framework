@@ -115,7 +115,6 @@
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pypi_release_checklist.html">PyPI Release Checklist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
@@ -286,7 +285,7 @@ repository with <a class="reference external" href="https://docs.github.com/en/f
 perform any job you’d like, including CI/CD, and combine actions in a completely
 customized workflow.</p>
 <p>You only need an existing GitHub repository to create and run a GitHub Actions workflow.
-You workflow configurations are stored on <cite>.github/workflows</cite> directory.</p>
+Your workflow configurations are stored in <cite>.github/workflows</cite> directory.</p>
 </div>
 <div class="section" id="step-9-set-up-the-docs">
 <h2>Step 9: Set Up the Docs<a class="headerlink" href="#step-9-set-up-the-docs" title="Permalink to this headline">¶</a></h2>
@@ -306,28 +305,37 @@ through a build process, and publishes a website.</p>
 domain. You can automatically host to <a class="reference external" href="https://github.com/marketplace/actions/github-pages-action">GitHub Pages using Using GitHub Actions</a>.</p>
 <div class="section" id="setup-deploy-keys">
 <h3>Setup Deploy Keys<a class="headerlink" href="#setup-deploy-keys" title="Permalink to this headline">¶</a></h3>
-<p>Generate your deploy key with the following command</p>
+<ol class="arabic">
+<li><p>Generate your deploy key with the following command</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&quot;</span><span class="k">$(</span>git config user.email<span class="k">)</span><span class="s2">&quot;</span> -f ~/.ssh/gh-pages -N <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<p>You will get 2 files:
-* gh-pages.pub (public key)
-* gh-pages     (private key)</p>
-<p>Install <cite>xclip</cite> if you haven’t done so already</p>
+<p>You will get 2 files:</p>
+<ul class="simple">
+<li><p>gh-pages.pub (public key)</p></li>
+<li><p>gh-pages     (private key)</p></li>
+</ul>
+</li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">xclip</span></code> if you haven’t done so already</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt install xclip -y
 </pre></div>
 </div>
-<p>Next, Go to <em>Repository Settings</em></p>
-<p>Copy your public key</p>
+</li>
+<li><p>Copy your public key</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> xclip -sel clip &lt; ~/.ssh/gh-pages.pub
 </pre></div>
 </div>
-<p>Go to <em>Deploy Keys</em> and add your public key with the <em>Allow write access</em></p>
-<p>Copy your private key</p>
+</li>
+<li><p>Next, Go to <strong>Repository Settings</strong>.</p>
+<p>Go to <strong>Deploy Keys</strong> and add your public key with the <strong>Allow write access</strong></p>
+</li>
+<li><p>Copy your private key</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> xclip -sel clip &lt; ~/.ssh/gh-pages
 </pre></div>
 </div>
-<p>Go to <em>Secrets</em> and add your private key as <cite>ACTIONS_DEPLOY_KEY</cite></p>
+</li>
+<li><p>Go to <strong>Secrets</strong> and add your private key as <cite>ACTIONS_DEPLOY_KEY</cite></p></li>
+</ol>
 </div>
 </div>
 <div class="section" id="step-10-release-on-pypi">
@@ -337,7 +345,6 @@ repository for the Python programming language. Python developers intend it to
 be a comprehensive catalog of all open-source Python packages.</p>
 <p>When you are ready, you can release your package using poetry.</p>
 <p>See <a class="reference internal" href="pypi_setup.html#pypi-setup"><span class="std std-ref">PyPI Setup</span></a> for more information.</p>
-<p>Here’s a release checklist you can use: <a class="reference internal" href="pypi_release_checklist.html#pypi-release-checklist"><span class="std std-ref">PyPI Release Checklist</span></a></p>
 </div>
 <div class="section" id="having-problems">
 <h2>Having problems?<a class="headerlink" href="#having-problems" title="Permalink to this headline">¶</a></h2>

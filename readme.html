@@ -104,7 +104,6 @@
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pypi_release_checklist.html">PyPI Release Checklist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
@@ -177,9 +176,9 @@
 <a class="reference external image-reference" href="https://sp-fm.github.io/fuse-framework/"><img alt="Documentation" src="https://github.com/sp-fm/fuse-framework/workflows/Documentation/badge.svg" /></a>
 <p><a class="reference external" href="https://github.com/cookiecutter/cookiecutter">Cookiecutter</a> template for Fusemachines Python Framework.</p>
 <ul class="simple">
-<li><p>GitHub repo: <a class="reference external" href="https://github.com/sp-fm/fuse-framework">https://github.com/sp-fm/fuse-framework</a></p></li>
-<li><p>Documentation: <a class="reference external" href="https://sp-fm.github.io/fuse-framework/">https://sp-fm.github.io/fuse-framework/</a></p></li>
-<li><p>Free software: BSD license</p></li>
+<li><p><strong>Source Code</strong>: <a class="reference external" href="https://github.com/sp-fm/fuse-framework">https://github.com/sp-fm/fuse-framework</a></p></li>
+<li><p><strong>Documentation</strong>: <a class="reference external" href="https://sp-fm.github.io/fuse-framework/">https://sp-fm.github.io/fuse-framework/</a></p></li>
+<li><p><strong>Bug Reports</strong>: <a class="reference external" href="https://github.com/sp-fm/fuse-framework/issues">https://github.com/sp-fm/fuse-framework/issues</a></p></li>
 </ul>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
@@ -198,36 +197,39 @@
 <li><p>GitHub issue templates</p></li>
 <li><p><a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/actions">GitHub Actions</a>: Continuous Integration</p></li>
 <li><p><a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/working-with-github-pages">GitHub Pages</a>: Documentation Hosting</p></li>
-<li><p><a class="reference external" href="https://pypi.python.org/pypi">PyPi</a>: Auto-release when you make a release (optional)</p></li>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi">PyPi</a>: Auto-deploy when you make a release (optional)</p></li>
 </ul>
 </div>
 <div class="section" id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
-<p>Install the latest Cookiecutter if you haven’t installed it yet (this requires
+<ol class="arabic">
+<li><p>Install the latest Cookiecutter if you haven’t installed it yet (this requires
 Cookiecutter 1.4.0 or higher):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install -U cookiecutter
 </pre></div>
 </div>
-<p>Install the prerelease version of poetry</p>
+</li>
+<li><p>Install the prerelease version of poetry</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install -U poetry --pre
 </pre></div>
 </div>
-<p>Generate a Python package project:</p>
+</li>
+<li><p>Generate a Python package project:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cookiecutter https://github.com/sp-fm/fuse-framework.git
 </pre></div>
 </div>
-<p>Go to the generated project and run the initialization process:</p>
+</li>
+<li><p>Go to the generated project and run the initialization process:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> mypackage
 <span class="gp">$</span> make init
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">mypackage</span></code> is the name of the project that was generated.</p>
-<p>Then:</p>
-<ul class="simple">
+</li>
 <li><p>Create a repo and put it there.</p></li>
 <li><p>Generate the docs by pushing your first commit to master.</p></li>
-<li><p>Release your package by pushing a new tag to master.</p></li>
-</ul>
+<li><p>Deploy your package to <a class="reference external" href="https://pypi.python.org/pypi">PyPi</a> by pushing a tag and creating a release.</p></li>
+</ol>
 <p>For more details, see the <a class="reference external" href="https://sp-fm.github.io/fuse-framework/tutorial.html">fuse-framework tutorial</a>.</p>
 </div>
 <div class="section" id="acknowledgment">

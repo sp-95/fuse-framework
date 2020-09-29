@@ -154,7 +154,7 @@ perform any job you'd like, including CI/CD, and combine actions in a completely
 customized workflow.
 
 You only need an existing GitHub repository to create and run a GitHub Actions workflow.
-You workflow configurations are stored on `.github/workflows` directory.
+Your workflow configurations are stored in `.github/workflows` directory.
 
 .. _GitHub Actions: https://docs.github.com/en/free-pro-team@latest/actions
 
@@ -183,39 +183,40 @@ domain. You can automatically host to `GitHub Pages using Using GitHub Actions`_
 Setup Deploy Keys
 ~~~~~~~~~~~~~~~~~
 
-Generate your deploy key with the following command
+#. Generate your deploy key with the following command
 
-.. code-block:: console
+   .. code-block:: console
 
-    $ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f ~/.ssh/gh-pages -N ""
+        $ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f ~/.ssh/gh-pages -N ""
 
-You will get 2 files:
-* gh-pages.pub (public key)
-* gh-pages     (private key)
+   You will get 2 files:
 
-Install `xclip` if you haven't done so already
+   * gh-pages.pub (public key)
+   * gh-pages     (private key)
 
-.. code-block:: console
+#. Install ``xclip`` if you haven't done so already
 
-    $ sudo apt install xclip -y
+   .. code-block:: console
 
-Next, Go to *Repository Settings*
+        $ sudo apt install xclip -y
 
-Copy your public key
+#. Copy your public key
 
-.. code-block:: console
+   .. code-block:: console
 
-    $ xclip -sel clip < ~/.ssh/gh-pages.pub
+        $ xclip -sel clip < ~/.ssh/gh-pages.pub
 
-Go to *Deploy Keys* and add your public key with the *Allow write access*
+#. Next, Go to **Repository Settings**.
 
-Copy your private key
+   Go to **Deploy Keys** and add your public key with the **Allow write access**
 
-.. code-block:: console
+#. Copy your private key
 
-    $ xclip -sel clip < ~/.ssh/gh-pages
+   .. code-block:: console
 
-Go to *Secrets* and add your private key as `ACTIONS_DEPLOY_KEY`
+        $ xclip -sel clip < ~/.ssh/gh-pages
+
+#. Go to **Secrets** and add your private key as `ACTIONS_DEPLOY_KEY`
 
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
@@ -236,8 +237,6 @@ be a comprehensive catalog of all open-source Python packages.
 When you are ready, you can release your package using poetry.
 
 See :ref:`pypi-setup` for more information.
-
-Here's a release checklist you can use: :ref:`pypi-release-checklist`
 
 
 Having problems?

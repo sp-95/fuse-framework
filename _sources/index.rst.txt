@@ -31,7 +31,6 @@ Welcome to Fusemachines Python Framework's documentation!
    :caption: Miscellaneous
 
    contributing
-   pypi_release_checklist
    troubleshooting
 
 
