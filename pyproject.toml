@@ -28,11 +28,11 @@ python = "^3.7"
 [tool.poetry.dev-dependencies]
 pytest = "*"
 tox = "*"
+flake8 = "*"
 cookiecutter = "*"
 pytest-cookies = "*"
 sphinx-rtd-theme = "*"
 toml = "*"
-PyYAML = "*"
 pre-commit = "*"
 
 [tool.poetry.urls]
