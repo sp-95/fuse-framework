@@ -27,13 +27,13 @@ python = "^3.7"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
-tox = "*"
 flake8 = "*"
+pre-commit = "*"
 cookiecutter = "*"
 pytest-cookies = "*"
+tox = "*"
 sphinx-rtd-theme = "*"
 toml = "*"
-pre-commit = "*"
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/sp-fm/fuse-framework/issues"
@@ -44,7 +44,7 @@ max-complexity = 10
 per-file-ignores = """
     # imported but unused
     __init__.py: F401
-"""
+# """
 
 [build-system]
 requires = ["poetry-core>=1.0.0a5"]

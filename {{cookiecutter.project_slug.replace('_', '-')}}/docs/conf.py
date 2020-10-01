@@ -29,8 +29,11 @@ project = str(pkg_meta["name"])
 copyright = "{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}"
 author = str(pkg_meta["authors"])
 
+# The short X.Y version
+version = str(pkg_meta["version"])
+
 # The full version, including alpha/beta/rc tags
-release = str(pkg_meta["version"])
+release = version
 
 # -- General configuration ---------------------------------------------------
 
