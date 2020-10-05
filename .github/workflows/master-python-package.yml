@@ -46,7 +46,7 @@ jobs:
         run: poetry install
 
       - name: Lint with flake8
-        run: poetry run flake8 hooks tests
+        run: poetry run flake8 hooks tests --config=pyproject.toml
 
       - name: Test with pytest
         run: poetry run pytest
