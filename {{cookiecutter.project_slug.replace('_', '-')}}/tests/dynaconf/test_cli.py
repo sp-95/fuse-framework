@@ -4,8 +4,7 @@ from pathlib import Path
 
 import pytest
 from dynaconf.vendor.box.exceptions import BoxKeyError
-
-from {{ cookiecutter.project_slug }}.dynaconf.cli import Main
+from {{cookiecutter.project_slug}}.dynaconf.cli import Main
 
 
 class TestMain:

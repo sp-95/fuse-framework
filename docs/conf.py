@@ -20,6 +20,7 @@ import toml
 
 # -- Project information -----------------------------------------------------
 
+
 def _get_project_meta():
     return toml.load("../pyproject.toml")["tool"]["poetry"]
 

@@ -84,7 +84,8 @@ def test_bake_with_defaults(cookies):
 
 
 @pytest.mark.parametrize(
-    "extra_context", [
+    "extra_context",
+    [
         {},
         {
             "full_name": 'name "quote" name',
@@ -131,21 +132,22 @@ def test_make_help(cookies):
                 "make help",
                 str(result.project),
             )
-            assert b"check code coverage quickly with the default Python" in \
-                output
+            assert b"check code coverage quickly with the default Python" in output
 
 
 @pytest.mark.parametrize(
-    "license_info", [
+    "license_info",
+    [
         ("MIT license", "MIT "),
         (
-            "BSD license", "Redistributions of source code must retain the above"
+            "BSD license",
+            "Redistributions of source code must retain the above"
             " copyright notice, this",
         ),
         ("ISC license", "ISC License"),
         (
-            "Apache Software License 2.0", "Licensed under the Apache License,"
-            " Version 2.0",
+            "Apache Software License 2.0",
+            "Licensed under the Apache License," " Version 2.0",
         ),
         ("GNU General Public License v3", "GNU GENERAL PUBLIC LICENSE"),
     ],
