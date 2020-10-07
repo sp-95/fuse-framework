@@ -45,11 +45,8 @@ jobs:
       - name: Install dependencies
         run: poetry install
 
-      - name: Lint with flake8
-        run: poetry run flake8 {{ cookiecutter.project_slug }} tests
-
-      - name: Test with pytest
-        run: poetry run pytest
+      - name: Run pre-commit action
+        uses: pre-commit/action@v2.0.0
 
       - name: Run Tox
         run: poetry run tox -e py
