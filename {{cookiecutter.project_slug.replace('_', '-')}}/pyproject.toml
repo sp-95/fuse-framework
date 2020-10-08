@@ -42,12 +42,10 @@ loguru = "*"
 dynaconf = "*"
 
 [tool.poetry.dev-dependencies]
-flake8 = "*"
 pre-commit = "*"
 pytest-cov = "*"
 tox = "*"
 sphinx-rtd-theme = "*"
-toml = "*"
 
 [tool.poetry.scripts]
 {{ cookiecutter.project_slug.replace('_', '-') }} = "{{ cookiecutter.project_slug }}.dynaconf.cli:main"

@@ -27,13 +27,11 @@ python = "^3.7"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
-flake8 = "*"
 pre-commit = "*"
 cookiecutter = "*"
 pytest-cookies = "*"
 tox = "*"
 sphinx-rtd-theme = "*"
-toml = "*"
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/sp-fm/fuse-framework/issues"
