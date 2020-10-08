@@ -28,11 +28,12 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.7"
+loguru = "*"
+cookiecutter = "*"
 
 [tool.poetry.dev-dependencies]
-pytest = "*"
 pre-commit = "*"
-cookiecutter = "*"
+pytest = "*"
 pytest-cookies = "*"
 tox = "*"
 sphinx-rtd-theme = "*"
