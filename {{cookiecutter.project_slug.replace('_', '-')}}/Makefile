@@ -1,4 +1,4 @@
-.PHONY: help init clean test docs install build publish
+.PHONY: help clean test docs install build publish
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -25,11 +25,6 @@ BROWSER := python -c "$$BROWSER_PYSCRIPT"
 
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
-
-init:
-	git init
-	poetry install
-	poetry run pre-commit install
 
 clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
 

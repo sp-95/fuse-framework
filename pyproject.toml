@@ -33,6 +33,9 @@ pytest-cookies = "*"
 tox = "*"
 sphinx-rtd-theme = "*"
 
+[tool.poetry.scripts]
+fuse = "fuse_framework.main:init"
+
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/sp-fm/fuse-framework/issues"
 
