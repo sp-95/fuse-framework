@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Tutorial &mdash; fuse-framework 0.1.0 documentation</title>
+  <title>Tutorial &mdash; fuse-framework 0.1.1 documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.1.1
               </div>
             
           
@@ -90,19 +90,13 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="readme.html">Fusemachines Python Framework</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#step-1-install-cookiecutter">Step 1: Install Cookiecutter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-2-generate-your-package">Step 2: Generate Your Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-install-fusemachines-framework">Step 1: Install Fusemachines Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-initialize-your-package">Step 2: Initialize Your Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-3-setup-virtual-environment">Step 3: Setup Virtual Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-4-install-dev-requirements">Step 4: Install Dev Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-5-initialize-git">Step 5: Initialize Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-6-pre-commit-installation">Step 6: Pre-commit Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-7-create-a-github-repo">Step 7: Create a GitHub Repo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-8-set-up-github-actions">Step 8: Set Up GitHub Actions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-9-set-up-the-docs">Step 9: Set Up the Docs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#setup-deploy-keys">Setup Deploy Keys</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#step-10-release-on-pypi">Step 10: Release on PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-create-a-github-repo">Step 4: Create a GitHub Repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-set-up-github-actions">Step 5: Set Up GitHub Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-6-set-up-the-docs">Step 6: Set Up the Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-7-release-on-pypi">Step 7: Release on PyPI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#having-problems">Having problems?</a></li>
 </ul>
 </li>
@@ -191,18 +185,16 @@
 Create these before you get started on this tutorial. If you are new to Git and
 GitHub, you should probably spend a few minutes on some of the tutorials at the
 top of the page at <a class="reference external" href="https://help.github.com/">GitHub Help</a>.</p>
-<div class="section" id="step-1-install-cookiecutter">
-<h2>Step 1: Install Cookiecutter<a class="headerlink" href="#step-1-install-cookiecutter" title="Permalink to this headline">¶</a></h2>
-<p>Install cookiecutter.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install --user cookiecutter
+<div class="section" id="step-1-install-fusemachines-framework">
+<h2>Step 1: Install Fusemachines Framework<a class="headerlink" href="#step-1-install-fusemachines-framework" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install --user fuse-framework
 </pre></div>
 </div>
 </div>
-<div class="section" id="step-2-generate-your-package">
-<h2>Step 2: Generate Your Package<a class="headerlink" href="#step-2-generate-your-package" title="Permalink to this headline">¶</a></h2>
-<p>Now it’s time to generate your Python package.</p>
-<p>Use cookiecutter, pointing it at the fuse-framework repo.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cookiecutter https://github.com/sp-fm/fuse-framework.git
+<div class="section" id="step-2-initialize-your-package">
+<h2>Step 2: Initialize Your Package<a class="headerlink" href="#step-2-initialize-your-package" title="Permalink to this headline">¶</a></h2>
+<p>Now it’s time to initialize your Python package.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> fuse init
 </pre></div>
 </div>
 <p>You’ll be asked to enter a bunch of values to set the package up. If you don’t
@@ -225,46 +217,8 @@ option.</p>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">mypackage</span></code> is the name of the package that you’ll create.</p>
 </div>
-<div class="section" id="step-4-install-dev-requirements">
-<h2>Step 4: Install Dev Requirements<a class="headerlink" href="#step-4-install-dev-requirements" title="Permalink to this headline">¶</a></h2>
-<p>You should still be in the folder containing the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.</p>
-<p>Your virtualenv should still be activated. If it isn’t, activate it now. Install
-the new project’s local development requirements.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry install
-</pre></div>
-</div>
-</div>
-<div class="section" id="step-5-initialize-git">
-<h2>Step 5: Initialize Git<a class="headerlink" href="#step-5-initialize-git" title="Permalink to this headline">¶</a></h2>
-<p>Create an empty Git repository.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git init
-</pre></div>
-</div>
-</div>
-<div class="section" id="step-6-pre-commit-installation">
-<h2>Step 6: Pre-commit Installation<a class="headerlink" href="#step-6-pre-commit-installation" title="Permalink to this headline">¶</a></h2>
-<p>Git hook scripts are useful for identifying simple issues before submission to
-code review. We run our hooks on every commit to automatically point out issues
-in code such as trailing whitespace, and debug statements. By pointing these
-issues out before code review, this allows a code reviewer to focus on the
-architecture of a change while not wasting time with trivial style nitpicks.</p>
-<p>Before you can run hooks, you need to have the <a class="reference external" href="https://pre-commit.com/">pre-commit</a> package manager
-installed.</p>
-<p>Install pre-commit if it is not present in the dependencies.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry add pre-commit --dev
-<span class="gp">$</span> pre-commit --version
-</pre></div>
-</div>
-<p>You can change your pre-commit configurations in the <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>
-file. This is the list of <a class="reference external" href="https://pre-commit.com/hooks.html">hooks supported</a> by pre-commit.</p>
-<p>Set up the git hook scripts.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pre-commit install
-</pre></div>
-</div>
-<p>Now pre-commit will run automatically on <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>!</p>
-</div>
-<div class="section" id="step-7-create-a-github-repo">
-<h2>Step 7: Create a GitHub Repo<a class="headerlink" href="#step-7-create-a-github-repo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-4-create-a-github-repo">
+<h2>Step 4: Create a GitHub Repo<a class="headerlink" href="#step-4-create-a-github-repo" title="Permalink to this headline">¶</a></h2>
 <p>Go to your GitHub account and create a new repo named <code class="docutils literal notranslate"><span class="pre">mypackage</span></code>, where
 <code class="docutils literal notranslate"><span class="pre">mypackage</span></code> matches the <code class="docutils literal notranslate"><span class="pre">[project_slug]</span></code> from your answers to running
 cookiecutter.</p>
@@ -282,8 +236,8 @@ package name.</p>
 <p>You’ll need an ssh key to push the repo. You can <a class="reference external" href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Generate</a> a key or <a class="reference external" href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Add</a> an
 existing one.</p>
 </div>
-<div class="section" id="step-8-set-up-github-actions">
-<h2>Step 8: Set Up GitHub Actions<a class="headerlink" href="#step-8-set-up-github-actions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-5-set-up-github-actions">
+<h2>Step 5: Set Up GitHub Actions<a class="headerlink" href="#step-5-set-up-github-actions" title="Permalink to this headline">¶</a></h2>
 <p>Automate, customize, and execute your software development workflows right in your
 repository with <a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/actions">GitHub Actions</a>. You can discover, create, and share actions to
 perform any job you’d like, including CI/CD, and combine actions in a completely
@@ -291,8 +245,8 @@ customized workflow.</p>
 <p>You only need an existing GitHub repository to create and run a GitHub Actions workflow.
 Your workflow configurations are stored in <cite>.github/workflows</cite> directory.</p>
 </div>
-<div class="section" id="step-9-set-up-the-docs">
-<h2>Step 9: Set Up the Docs<a class="headerlink" href="#step-9-set-up-the-docs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-6-set-up-the-docs">
+<h2>Step 6: Set Up the Docs<a class="headerlink" href="#step-6-set-up-the-docs" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> is a tool that makes it easy to create intelligent and beautiful
 documentation.</p>
 <p>Sphinx uses <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a> as its markup language and many of its
@@ -307,43 +261,9 @@ JavaScript files straight from a repository on GitHub optionally runs the files
 through a build process, and publishes a website.</p>
 <p>You can host your site on GitHub’s <code class="docutils literal notranslate"><span class="pre">github.io</span></code> domain or your custom
 domain. You can automatically host to <a class="reference external" href="https://github.com/marketplace/actions/github-pages-action">GitHub Pages using Using GitHub Actions</a>.</p>
-<div class="section" id="setup-deploy-keys">
-<h3>Setup Deploy Keys<a class="headerlink" href="#setup-deploy-keys" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><p>Generate your deploy key with the following command</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&quot;</span><span class="k">$(</span>git config user.email<span class="k">)</span><span class="s2">&quot;</span> -f ~/.ssh/gh-pages -N <span class="s2">&quot;&quot;</span>
-</pre></div>
 </div>
-<p>You will get 2 files:</p>
-<ul class="simple">
-<li><p>gh-pages.pub (public key)</p></li>
-<li><p>gh-pages     (private key)</p></li>
-</ul>
-</li>
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">xclip</span></code> if you haven’t done so already</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt install xclip -y
-</pre></div>
-</div>
-</li>
-<li><p>Copy your public key</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> xclip -sel clip &lt; ~/.ssh/gh-pages.pub
-</pre></div>
-</div>
-</li>
-<li><p>Next, Go to <strong>Repository Settings</strong>.</p>
-<p>Go to <strong>Deploy Keys</strong> and add your public key with the <strong>Allow write access</strong></p>
-</li>
-<li><p>Copy your private key</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> xclip -sel clip &lt; ~/.ssh/gh-pages
-</pre></div>
-</div>
-</li>
-<li><p>Go to <strong>Secrets</strong> and add your private key as <cite>ACTIONS_DEPLOY_KEY</cite></p></li>
-</ol>
-</div>
-</div>
-<div class="section" id="step-10-release-on-pypi">
-<h2>Step 10: Release on PyPI<a class="headerlink" href="#step-10-release-on-pypi" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-7-release-on-pypi">
+<h2>Step 7: Release on PyPI<a class="headerlink" href="#step-7-release-on-pypi" title="Permalink to this headline">¶</a></h2>
 <p>The Python Package Index or <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a> is the official third-party software
 repository for the Python programming language. Python developers intend it to
 be a comprehensive catalog of all open-source Python packages.</p>
