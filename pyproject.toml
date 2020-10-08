@@ -28,6 +28,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.7"
+fire = "*"
 loguru = "*"
 cookiecutter = "*"
 
@@ -39,7 +40,7 @@ tox = "*"
 sphinx-rtd-theme = "*"
 
 [tool.poetry.scripts]
-fuse = "fuse_framework.main:init"
+fuse = "fuse_framework.main:main"
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/sp-fm/fuse-framework/issues"
