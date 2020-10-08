@@ -2,6 +2,20 @@
 CHANGELOG
 =========
 
+0.1.1 (2020-10-08)
+------------------
+
+Fixes
+~~~~~
+
+* Project Generation
+
+Changes
+~~~~~~~
+
+* Use GitHub token instead of Deploy token to deploy to GitHub Pages
+* Update quick-start and tutorial docs
+
 0.1.0 (2020-10-08)
 ------------------
 
