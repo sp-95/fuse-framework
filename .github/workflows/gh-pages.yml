@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - fuse
-  pull_request:
-    branches:
-      - fuse
 
 jobs:
   document:
