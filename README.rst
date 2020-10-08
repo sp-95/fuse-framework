@@ -47,33 +47,17 @@ Features
 Quickstart
 ----------
 
-#. Install the latest Cookiecutter if you haven't installed it yet (this requires
-   Cookiecutter 1.4.0 or higher):
+#. Install the latest framework of Fusemachines if you haven't installed it yet
 
    .. code-block:: console
 
-        $ pip install -U cookiecutter
+        $ pip install -U fuse-framework
 
-#. Install the prerelease version of poetry
-
-   .. code-block:: console
-
-        $ pip install -U poetry --pre
-
-#. Generate a Python package project:
+#. Initialize your project
 
    .. code-block:: console
 
-        $ cookiecutter https://github.com/sp-fm/fuse-framework.git
-
-#. Go to the generated project and run the initialization process:
-
-   .. code-block:: console
-
-        $ cd mypackage
-        $ make init
-
-   where ``mypackage`` is the name of the project that was generated.
+        $ fuse init
 
 #. Create a repo and put it there.
 #. Generate the docs by pushing your first commit to master.
