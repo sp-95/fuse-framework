@@ -247,25 +247,12 @@ development by typing:</p>
 </div>
 <p>Now you can make your changes locally.</p>
 </li>
-<li><p>When you’re done making changes, check that your changes pass flake8. Since, this
-package contains mostly templates the flake should be run for tests directory:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> flake8 tests --config<span class="o">=</span>pyproject.toml
-</pre></div>
-</div>
-</li>
-<li><p>The next step would be to run the test cases. <strong>fuse-framework</strong> uses pytest, you can run
-PyTest. Before you run pytest you should ensure all dependancies are installed.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pytest
-</pre></div>
-</div>
-</li>
-<li><p>Before raising a pull request you should also run tox. This will run the tests
-across different versions of Python:</p>
+<li><p>Before raising a pull request you should run tox. This will run the tests
+across different versions of Python, perform pre-commit checks and tests your
+documentation build.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> tox
 </pre></div>
 </div>
-<p>If you are missing flake8, pytest, and/or tox, just <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span></code> them into
-your virtualenv.</p>
 </li>
 <li><p>If your contribution is a bug fix or new feature, you may want to add a test
 to the existing test suite. See the section <a class="reference internal" href="#new-test">Add a New Test</a> below for details.</p></li>
