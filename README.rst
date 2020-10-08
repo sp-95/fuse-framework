@@ -10,6 +10,14 @@ Fusemachines Python Framework
     :target: https://sp-fm.github.io/fuse-framework/
     :alt: Documentation
 
+.. image:: https://github.com/sp-fm/fuse-framework/workflows/Release/badge.svg
+    :target: https://pypi.python.org/pypi/fuse-framework
+    :alt: Release
+
+.. image:: https://img.shields.io/pypi/v/fuse-framework.svg
+    :target: https://pypi.python.org/pypi/fuse-framework
+    :alt: PyPi Version
+
 Cookiecutter_ template for Fusemachines Python Framework.
 
 * **Source Code**: https://github.com/sp-fm/fuse-framework

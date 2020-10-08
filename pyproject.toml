@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "fuse-framework"
 version = "0.1.0"
-description = "Fusemachines Python Framework"
-license = "BSD"
-authors = ["Shashanka Prajapati <shashanka@fusemachines.com>"]
-readme = "README.rst"
 repository = "https://github.com/sp-fm/fuse-framework"
 documentation = "https://sp-fm.github.io/fuse-framework"
+description = "Fusemachines Python Framework"
+authors = ["Shashanka Prajapati <shashanka@fusemachines.com>"]
+readme = "README.rst"
+license = "BSD"
 keywords = ["cookiecutter", "template", "package"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -20,6 +20,10 @@ classifiers = [
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Topic :: Software Development",
+]
+packages = [
+    { include = "fuse_framework" },
+    { include = "tests", format = "sdist" },
 ]
 
 [tool.poetry.dependencies]
