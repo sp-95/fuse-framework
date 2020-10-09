@@ -11,8 +11,8 @@ top of the page at `GitHub Help`_.
 .. _GitHub Help: https://help.github.com/
 
 
-Step 1: Install Fusemachines Framework
---------------------------------------
+Step 1: Install Python Framework
+--------------------------------
 
 .. code-block:: console
 

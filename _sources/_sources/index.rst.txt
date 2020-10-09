@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Fusemachines Python Framework's documentation!
-=========================================================
+Welcome to Python Framework's documentation!
+============================================
 
 .. toctree::
    :maxdepth: 2
