@@ -33,9 +33,9 @@ Look through the GitHub issues for features that are tagged with ``enhancement``
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Fusemachines Python Framework could always use more documentation, whether as part of
-the official Fusemachines Python Framework docs, in docstrings, or even on the web in
-blog posts, articles, and such.
+Python Framework could always use more documentation, whether as part of the official
+Python Framework docs, in docstrings, or even on the web in blog posts, articles, and
+such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~

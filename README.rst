@@ -1,6 +1,6 @@
-=============================
-Fusemachines Python Framework
-=============================
+================
+Python Framework
+================
 
 .. image:: https://github.com/sp-fm/fuse-framework/workflows/Tests/badge.svg
     :target: https://github.com/sp-fm/fuse-framework/actions?query=workflow%3ATests
@@ -18,7 +18,7 @@ Fusemachines Python Framework
     :target: https://pypi.python.org/pypi/fuse-framework
     :alt: PyPi Version
 
-Cookiecutter_ template for Fusemachines Python Framework.
+Cookiecutter_ template for Python Framework.
 
 * **Source Code**: https://github.com/sp-fm/fuse-framework
 * **Documentation**: https://sp-fm.github.io/fuse-framework/
@@ -47,7 +47,7 @@ Features
 Quickstart
 ----------
 
-#. Install the latest framework of Fusemachines if you haven't installed it yet
+#. Install the latest framework for Python if you haven't installed it yet
 
    .. code-block:: console
 
