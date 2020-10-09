@@ -2,6 +2,19 @@
 CHANGELOG
 =========
 
+0.1.5 (2020-10-09)
+------------------
+
+Fixes
+~~~~~
+
+* toml dependency
+
+Changes
+~~~~~~~
+
+* Remove Fusemachines from docs
+
 0.1.4 (2020-10-08)
 ------------------
 
