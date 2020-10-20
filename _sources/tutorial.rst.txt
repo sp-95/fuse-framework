@@ -11,26 +11,22 @@ top of the page at `GitHub Help`_.
 .. _GitHub Help: https://help.github.com/
 
 
-Step 1: Install Cookiecutter
-----------------------------
-
-Install cookiecutter.
+Step 1: Install Python Framework
+--------------------------------
 
 .. code-block:: console
 
-    $ pip install --user cookiecutter
+    $ pip install --user fuse-framework
 
 
-Step 2: Generate Your Package
+Step 2: Initialize Your Package
 -----------------------------
 
-Now it's time to generate your Python package.
-
-Use cookiecutter, pointing it at the fuse-framework repo.
+Now it's time to initialize your Python package.
 
 .. code-block:: console
 
-    $ cookiecutter https://github.com/sp-fm/fuse-framework.git
+    $ fuse init
 
 You'll be asked to enter a bunch of values to set the package up. If you don't
 know what to enter, stick with the defaults.
@@ -60,64 +56,7 @@ Activate your environment.
 Here, ``mypackage`` is the name of the package that you'll create.
 
 
-Step 4: Install Dev Requirements
---------------------------------
-
-You should still be in the folder containing the ``pyproject.toml`` file.
-
-Your virtualenv should still be activated. If it isn't, activate it now. Install
-the new project's local development requirements.
-
-.. code-block:: console
-
-    $ poetry install
-
-
-Step 5: Initialize Git
-----------------------
-
-Create an empty Git repository.
-
-.. code-block:: console
-
-    $ git init
-
-
-Step 6: Pre-commit Installation
--------------------------------
-
-Git hook scripts are useful for identifying simple issues before submission to
-code review. We run our hooks on every commit to automatically point out issues
-in code such as trailing whitespace, and debug statements. By pointing these
-issues out before code review, this allows a code reviewer to focus on the
-architecture of a change while not wasting time with trivial style nitpicks.
-
-Before you can run hooks, you need to have the pre-commit_ package manager
-installed.
-
-Install pre-commit if it is not present in the dependencies.
-
-.. code-block:: console
-
-    $ poetry add pre-commit --dev
-    $ pre-commit --version
-
-You can change your pre-commit configurations in the ``.pre-commit-config.yaml``
-file. This is the list of `hooks supported`_ by pre-commit.
-
-Set up the git hook scripts.
-
-.. code-block:: console
-
-    $ pre-commit install
-
-Now pre-commit will run automatically on ``git commit``!
-
-.. _pre-commit: https://pre-commit.com/
-.. _hooks supported: https://pre-commit.com/hooks.html
-
-
-Step 7: Create a GitHub Repo
+Step 4: Create a GitHub Repo
 ----------------------------
 
 Go to your GitHub account and create a new repo named ``mypackage``, where
@@ -145,7 +84,7 @@ existing one.
 .. _Add: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 
 
-Step 8: Set Up GitHub Actions
+Step 5: Set Up GitHub Actions
 -----------------------------
 
 Automate, customize, and execute your software development workflows right in your
@@ -158,7 +97,8 @@ Your workflow configurations are stored in `.github/workflows` directory.
 
 .. _GitHub Actions: https://docs.github.com/en/free-pro-team@latest/actions
 
-Step 9: Set Up the Docs
+
+Step 6: Set Up the Docs
 --------------------------
 
 `Sphinx`_ is a tool that makes it easy to create intelligent and beautiful
@@ -180,44 +120,6 @@ through a build process, and publishes a website.
 You can host your site on GitHub's ``github.io`` domain or your custom
 domain. You can automatically host to `GitHub Pages using Using GitHub Actions`_.
 
-Setup Deploy Keys
-~~~~~~~~~~~~~~~~~
-
-#. Generate your deploy key with the following command
-
-   .. code-block:: console
-
-        $ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f ~/.ssh/gh-pages -N ""
-
-   You will get 2 files:
-
-   * gh-pages.pub (public key)
-   * gh-pages     (private key)
-
-#. Install ``xclip`` if you haven't done so already
-
-   .. code-block:: console
-
-        $ sudo apt install xclip -y
-
-#. Copy your public key
-
-   .. code-block:: console
-
-        $ xclip -sel clip < ~/.ssh/gh-pages.pub
-
-#. Next, Go to **Repository Settings**.
-
-   Go to **Deploy Keys** and add your public key with the **Allow write access**
-
-#. Copy your private key
-
-   .. code-block:: console
-
-        $ xclip -sel clip < ~/.ssh/gh-pages
-
-#. Go to **Secrets** and add your private key as `ACTIONS_DEPLOY_KEY`
-
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
 .. _Docutils: https://docutils.sourceforge.io/
@@ -227,7 +129,7 @@ Setup Deploy Keys
 .. _GitHub Pages using Using GitHub Actions: https://github.com/marketplace/actions/github-pages-action
 
 
-Step 10: Release on PyPI
+Step 7: Release on PyPI
 ------------------------
 
 The Python Package Index or `PyPI`_ is the official third-party software
