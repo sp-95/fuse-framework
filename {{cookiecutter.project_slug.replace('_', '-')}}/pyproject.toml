@@ -94,6 +94,7 @@ exclude_lines = [
 ]
 fail_under = 90
 ignore_errors = true
+skip_empty = true
 
 [build-system]
 requires = ["poetry>=0.12"]
