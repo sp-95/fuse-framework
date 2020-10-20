@@ -3,19 +3,20 @@
 from pathlib import Path
 
 import pytest
+from _pytest.logging import LogCaptureFixture
 from dynaconf.vendor.box.exceptions import BoxKeyError
 from {{cookiecutter.project_slug}}.dynaconf.cli import Main
 
 
 class TestMain:
     @staticmethod
-    def test_project_name(caplog):
+    def test_project_name(caplog: LogCaptureFixture) -> None:
         project_name = Main.project_name()
         assert "Project Name: " in caplog.text
         assert project_name == "{{ cookiecutter.project_slug.replace('_', '-') }}"
 
     @staticmethod
-    def test_database(caplog):
+    def test_database(caplog: LogCaptureFixture) -> None:
         with pytest.raises(BoxKeyError):
             Main.database(key="test")
 

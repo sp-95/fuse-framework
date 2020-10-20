@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Mapping
 
 import fire
 from loguru import logger
@@ -15,7 +15,7 @@ class Main:
         return settings.name
 
     @staticmethod
-    def database(key: str = "") -> Dict[str, str]:
+    def database(key: str = "") -> Mapping[str, str]:
         if key:
             result = {key: settings.database[key]}
             logger.info(f"{key.title()}: {result}")
