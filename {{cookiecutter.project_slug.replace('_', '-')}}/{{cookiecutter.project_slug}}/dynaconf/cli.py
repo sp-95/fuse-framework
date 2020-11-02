@@ -2,6 +2,7 @@ from typing import Mapping
 
 import fire
 from loguru import logger
+
 from {{cookiecutter.project_slug}}.dynaconf import settings
 
 
@@ -25,7 +26,7 @@ class Main:
         return result
 
 
-def main():
+def main() -> None:
     fire.Fire(Main)
 
 

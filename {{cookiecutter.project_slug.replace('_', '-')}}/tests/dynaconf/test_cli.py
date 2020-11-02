@@ -5,6 +5,7 @@ from pathlib import Path
 import pytest
 from _pytest.logging import LogCaptureFixture
 from dynaconf.vendor.box.exceptions import BoxKeyError
+
 from {{cookiecutter.project_slug}}.dynaconf.cli import Main
 
 
