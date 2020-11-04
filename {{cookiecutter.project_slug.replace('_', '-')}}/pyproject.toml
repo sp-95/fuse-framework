@@ -48,7 +48,7 @@ tox = "*"
 sphinx-rtd-theme = "*"
 
 [tool.poetry.scripts]
-{{ cookiecutter.project_slug.replace('_', '-') }} = "{{ cookiecutter.project_slug }}.dynaconf.cli:main"
+{{ cookiecutter.project_slug.replace('_', '-') }} = "{{ cookiecutter.project_slug }}.cli:main"
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug.replace('_', '-') }}/issues"

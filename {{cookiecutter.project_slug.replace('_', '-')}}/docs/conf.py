@@ -13,19 +13,14 @@
 import os
 import sys
 
-import toml
+from config import settings
 
 sys.path.insert(0, os.path.abspath("."))
 
 
 # -- Project information -----------------------------------------------------
 
-
-def _get_project_meta():
-    return toml.load("../pyproject.toml")["tool"]["poetry"]
-
-
-pkg_meta = _get_project_meta()
+pkg_meta = settings.PROJECT_META
 project = str(pkg_meta["name"])
 copyright = "{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}"
 author = str(pkg_meta["authors"])
