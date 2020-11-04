@@ -5,9 +5,9 @@ from dynaconf import Dynaconf
 
 
 class Config(Dynaconf):
-    PROJECT_META = toml.load("pyproject.toml")["tool"]["poetry"]
-
     BASE_PATH = Path(__file__).parent
+
+    PROJECT_META = toml.load(BASE_PATH / "pyproject.toml")["tool"]["poetry"]
 
 
 settings = Config(
