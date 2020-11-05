@@ -7,6 +7,8 @@ from dynaconf import Dynaconf
 class Config(Dynaconf):
     BASE_PATH = Path(__file__).parent
 
+    LOG_PATH = BASE_PATH / "logs"
+
     PROJECT_META = toml.load(BASE_PATH / "pyproject.toml")["tool"]["poetry"]
 
 

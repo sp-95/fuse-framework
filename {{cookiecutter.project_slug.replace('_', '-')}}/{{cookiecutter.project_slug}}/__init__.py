@@ -13,8 +13,8 @@ class PropagateHandler(logging.Handler):
 
 
 logger.add(PropagateHandler(), format="{message}")
-logger.add("logs/critical.log", level="CRITICAL", rotation="10MB")
-logger.add("logs/error.log", level="ERROR", rotation="10MB")
-logger.add("logs/warning.log", level="WARNING", rotation="10MB")
-logger.add("logs/info.log", level="INFO", rotation="10MB")
-logger.add("logs/debug.log", level="DEBUG", rotation="10MB")
+logger.add(settings.LOG_PATH / "critical.log", level="CRITICAL", rotation="10MB")
+logger.add(settings.LOG_PATH / "error.log", level="ERROR", rotation="10MB")
+logger.add(settings.LOG_PATH / "warning.log", level="WARNING", rotation="10MB")
+logger.add(settings.LOG_PATH / "info.log", level="INFO", rotation="10MB")
+logger.add(settings.LOG_PATH / "debug.log", level="DEBUG", rotation="10MB")
