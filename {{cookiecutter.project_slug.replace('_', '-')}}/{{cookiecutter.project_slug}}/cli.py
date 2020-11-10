@@ -17,6 +17,7 @@ class Main:
             return settings.name
         else:
             logger.info("Hello, World!")
+            return None
 
 
 def main() -> None:
