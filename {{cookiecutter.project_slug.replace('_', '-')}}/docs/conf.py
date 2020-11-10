@@ -13,7 +13,7 @@
 import os
 import sys
 
-from config import settings
+from {{cookiecutter.project_slug}}.config import settings
 
 sys.path.insert(0, os.path.abspath("."))
 

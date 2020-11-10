@@ -1,7 +1,7 @@
 from _pytest.logging import LogCaptureFixture
 
-from config import settings
 from {{cookiecutter.project_slug}}.cli import Main, __version__
+from {{cookiecutter.project_slug}}.config import settings
 
 
 class TestMain:

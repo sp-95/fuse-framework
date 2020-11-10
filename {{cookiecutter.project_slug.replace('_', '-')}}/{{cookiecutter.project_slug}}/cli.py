@@ -3,8 +3,8 @@ from typing import Optional
 import fire
 from loguru import logger
 
-from config import settings
 from {{cookiecutter.project_slug}} import __version__
+from {{cookiecutter.project_slug}}.config import settings
 
 
 class Main:
