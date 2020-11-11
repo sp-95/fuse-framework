@@ -47,7 +47,7 @@ jobs:
 
       - name: Run pre-commit action
         env:
-          SKIP: no-commit-to-branch
+          SKIP: no-commit-to-branch,install-dependencies,test
         uses: pre-commit/action@v2.0.0
 
       - name: Run Tox
