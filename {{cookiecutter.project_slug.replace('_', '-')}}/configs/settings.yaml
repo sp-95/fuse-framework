@@ -1,2 +1,6 @@
 default:
   name: {{ cookiecutter.project_slug.replace('_', '-') }}
+  debug: true
+
+production:
+  debug: false

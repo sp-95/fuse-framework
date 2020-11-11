@@ -1,23 +1,40 @@
 from pathlib import Path
+from typing import Any
 
 import toml
 from dynaconf import Dynaconf
+from loguru import logger
+
+_BASE_PATH = Path(__file__).parent.parent
+_CONFIG_PATH = _BASE_PATH / "configs"
 
 
 class Config(Dynaconf):
-    BASE_PATH = Path(__file__).parent.parent
+    def __init__(self, **kwargs: Any) -> None:
+        super(Config, self).__init__(**kwargs)
+        self.env = self.env_for_dynaconf.lower()
+        logger.info(f"Running in {self.env} mode")
 
-    CONFIG_PATH = BASE_PATH / "configs"
-    LOG_PATH = BASE_PATH / "logs"
+        if not hasattr(self, "debug"):
+            self.debug = True if self.env != "production" else False
+        if self.debug:
+            logger.info("Debug: ON")
 
-    PROJECT_META = toml.load(BASE_PATH / "pyproject.toml")["tool"]["poetry"]
+        self.base_path = _BASE_PATH
+
+        self.config_path = _CONFIG_PATH
+        self.log_path = self.base_path / "logs"
+
+        self.project_meta = toml.load(self.base_path / "pyproject.toml")["tool"][
+            "poetry"
+        ]
 
 
 settings = Config(
     envvar_prefix="FUSE",
     settings_files=[
-        Config.CONFIG_PATH / "settings.yaml",
-        Config.CONFIG_PATH / ".secrets.yaml",
+        _CONFIG_PATH / "settings.yaml",
+        _CONFIG_PATH / ".secrets.yaml",
     ],
     environments=True,
 )

@@ -56,12 +56,6 @@ repos:
         types: [text]
         stages: [commit, push, manual]
 
-  - repo: https://github.com/asottile/add-trailing-comma
-    rev: v2.0.1
-    hooks:
-      - id: add-trailing-comma
-        args: [--py36-plus]
-
   - repo: https://github.com/psf/black
     rev: 20.8b1
     hooks:
@@ -88,6 +82,12 @@ repos:
     rev: 2.1.2
     hooks:
       - id: prettier
+
+  - repo: https://github.com/asottile/add-trailing-comma
+    rev: v2.0.1
+    hooks:
+      - id: add-trailing-comma
+        args: [--py36-plus]
 
   - repo: local
     hooks:
