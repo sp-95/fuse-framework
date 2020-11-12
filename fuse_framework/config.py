@@ -3,7 +3,6 @@ from typing import Any
 
 import toml
 from dynaconf import Dynaconf
-from loguru import logger
 
 _BASE_PATH = Path(__file__).parent.parent
 _CONFIG_PATH = _BASE_PATH / "configs"
@@ -13,12 +12,9 @@ class Config(Dynaconf):
     def __init__(self, **kwargs: Any) -> None:
         super(Config, self).__init__(**kwargs)
         self.env = self.env_for_dynaconf.lower()
-        logger.info(f"Running in {self.env} mode")
 
         if not hasattr(self, "debug"):
             self.debug = True if self.env not in ["prod", "production"] else False
-        if self.debug:
-            logger.info("Debug: ON")
 
         self.base_path = _BASE_PATH
 
