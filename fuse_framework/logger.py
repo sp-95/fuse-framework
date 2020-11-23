@@ -33,13 +33,19 @@ class LogConfig:
     FORMAT = settings.get("log_format", LOGURU_FORMAT)
 
     @staticmethod
-    def setup(suppress_handlers: bool = True) -> None:
-        if suppress_handlers:  # pragma: no cover
-            setattr(logging.Logger, "addHandler", lambda self, handler: None)
-
-        logging.getLogger().handlers = [InterceptHandler()]
-
+    def setup() -> None:
         level = "DEBUG" if settings.debug else "INFO"
+
+        # intercept everything at the root logger
+        logging.root.handlers = [InterceptHandler()]
+        logging.root.setLevel(level)
+
+        # remove every other logger's handlers
+        # and propagate to root logger
+        for name in logging.root.manager.loggerDict.keys():
+            logging.getLogger(name).handlers = []
+            logging.getLogger(name).propagate = True
+
         logger.configure(
             handlers=[{"sink": sys.stdout, "level": level, "format": LogConfig.FORMAT}],
         )

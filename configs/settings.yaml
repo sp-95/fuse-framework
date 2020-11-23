@@ -1,5 +1,6 @@
 default:
   debug: true
+  log_format: "<g>{time:%Y-%m-%d %H:%M:%S}</g>\t<lvl>{level}\t{message}</lvl>"
 
 production:
   debug: false
