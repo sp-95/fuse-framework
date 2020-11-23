@@ -42,7 +42,7 @@ class LogConfig:
 
         # remove every other logger's handlers
         # and propagate to root logger
-        for name in logging.root.manager.loggerDict.keys():
+        for name in logging.root.manager.loggerDict.keys():  # type: ignore
             logging.getLogger(name).handlers = []
             logging.getLogger(name).propagate = True
 
