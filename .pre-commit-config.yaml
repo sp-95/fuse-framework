@@ -67,7 +67,6 @@ repos:
     rev: 3.8.4
     hooks:
       - id: flake8
-        args: [--config=pyproject.toml]
         exclude: ^{
 
   - repo: https://github.com/prettier/prettier
