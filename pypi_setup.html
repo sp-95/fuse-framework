@@ -3,20 +3,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>PyPI Setup &mdash; fuse-framework 0.1.5 documentation</title>
+  <title>PyPI Setup &mdash; python-framework 0.1.5 documentation</title>
   
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -26,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -51,7 +56,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> fuse-framework
+            <a href="index.html" class="icon icon-home"> python-framework
           
 
           
@@ -128,7 +133,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">fuse-framework</a>
+          <a href="index.html">python-framework</a>
         
       </nav>
 
@@ -138,6 +143,8 @@
         <div class="rst-content">
         
           
+
+
 
 
 
@@ -164,7 +171,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/pypi_setup.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -187,19 +194,19 @@ push a new tag to the master branch.</p>
 <p>To publish to PyPI, you can set your credentials for the repository named pypi.</p>
 <p>Note that it is recommended to use API tokens when uploading packages to PyPI. Once you
 have created a new token, you can tell Poetry to use it:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry config pypi-token.pypi my-token
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry config pypi-token.pypi my-token
 </pre></div>
 </div>
 <p>If you still want to use your username and password, you can do so with the following
 call to config.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry config http-basic.pypi username password
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry config http-basic.pypi username password
 </pre></div>
 </div>
 </div>
 <div class="section" id="packaging">
 <h2>Packaging<a class="headerlink" href="#packaging" title="Permalink to this headline">¶</a></h2>
 <p>Before you can publish your library, you will need to package it.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry build
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry build
 </pre></div>
 </div>
 <p>This command will package your library in two different formats: sdist which is the
@@ -213,14 +220,14 @@ source format, and wheel which is a compiled package.</p>
 automatically through Poetry.</p>
 <p>If we wanted to share a package with the Python community, we would publish on PyPI as
 well. Doing so is easy.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry publish
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry publish
 </pre></div>
 </div>
 <p>This will package and publish the library to PyPI, at the condition that you are a
 registered user and you have configured your credentials properly.</p>
 <p>The publish command does not execute build by default.</p>
 <p>If you want to build and publish your packages together, just pass the –build option.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry publish --build
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry publish --build
 </pre></div>
 </div>
 <p>Once this is done, your library will be available to anyone.</p>
@@ -280,9 +287,9 @@ tags are uploaded to GitHub.</p>
 <div class="section" id="your-release-process">
 <h2>Your Release Process<a class="headerlink" href="#your-release-process" title="Permalink to this headline">¶</a></h2>
 <p>If you are using this feature, this is how you would do a patch release:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> poetry version patch
-<span class="gp">$</span> git tag <span class="sb">`</span>poetry version -s<span class="sb">`</span>
-<span class="gp">$</span> git push --tags
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry version patch
+<span class="gp">$ </span>git tag <span class="sb">`</span>poetry version -s<span class="sb">`</span>
+<span class="gp">$ </span>git push --tags
 </pre></div>
 </div>
 <p>This will result in:</p>
@@ -308,37 +315,29 @@ tags are uploaded to GitHub.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="console_script_setup.html" class="btn btn-neutral float-left" title="Console Script Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="console_script_setup.html" class="btn btn-neutral float-left" title="Console Script Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, Shashanka Prajapati
+        &#169; Copyright 2020, Shashanka Prajapati.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

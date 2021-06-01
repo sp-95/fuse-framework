@@ -3,20 +3,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Tutorial &mdash; fuse-framework 0.1.5 documentation</title>
+  <title>Tutorial &mdash; python-framework 0.1.5 documentation</title>
   
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -26,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -51,7 +56,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> fuse-framework
+            <a href="index.html" class="icon icon-home"> python-framework
           
 
           
@@ -129,7 +134,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">fuse-framework</a>
+          <a href="index.html">python-framework</a>
         
       </nav>
 
@@ -139,6 +144,8 @@
         <div class="rst-content">
         
           
+
+
 
 
 
@@ -165,7 +172,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/tutorial.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -187,14 +194,14 @@ GitHub, you should probably spend a few minutes on some of the tutorials at the
 top of the page at <a class="reference external" href="https://help.github.com/">GitHub Help</a>.</p>
 <div class="section" id="step-1-install-python-framework">
 <h2>Step 1: Install Python Framework<a class="headerlink" href="#step-1-install-python-framework" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install --user fuse-framework
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip install --user python-framework
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-2-initialize-your-package">
 <h2>Step 2: Initialize Your Package<a class="headerlink" href="#step-2-initialize-your-package" title="Permalink to this headline">¶</a></h2>
 <p>Now it’s time to initialize your Python package.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> fuse init
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>shanx-py init
 </pre></div>
 </div>
 <p>You’ll be asked to enter a bunch of values to set the package up. If you don’t
@@ -202,17 +209,17 @@ know what to enter, stick with the defaults.</p>
 </div>
 <div class="section" id="step-3-setup-virtual-environment">
 <h2>Step 3: Setup Virtual Environment<a class="headerlink" href="#step-3-setup-virtual-environment" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install -U poetry
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip install -U poetry
 </pre></div>
 </div>
 <p>If you want to install prerelease versions, you can do so by passing –pre
 option.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install -U poetry --pre
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip install -U poetry --pre
 </pre></div>
 </div>
 <p>Activate your environment.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> mypackage
-<span class="gp">$</span> poetry shell
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> mypackage
+<span class="gp">$ </span>poetry shell
 </pre></div>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">mypackage</span></code> is the name of the package that you’ll create.</p>
@@ -224,11 +231,11 @@ option.</p>
 cookiecutter.</p>
 <p>You will find one folder named after the <code class="docutils literal notranslate"><span class="pre">[project_slug]</span></code>. Move into this
 folder, and then setup git to use your GitHub repo and upload the code.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git add .
-<span class="gp">$</span> git commit -m <span class="s2">&quot;first commit&quot;</span>
-<span class="gp">$</span> git branch -M master
-<span class="gp">$</span> git remote add origin git@github.com:myusername/mypackage.git
-<span class="gp">$</span> git push -u origin master
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git add .
+<span class="gp">$ </span>git commit -m <span class="s2">&quot;first commit&quot;</span>
+<span class="gp">$ </span>git branch -M master
+<span class="gp">$ </span>git remote add origin git@github.com:myusername/mypackage.git
+<span class="gp">$ </span>git push -u origin master
 </pre></div>
 </div>
 <p>Where <code class="docutils literal notranslate"><span class="pre">myusername</span></code> and <code class="docutils literal notranslate"><span class="pre">mypackage</span></code> are adjusted for your username and
@@ -273,11 +280,11 @@ be a comprehensive catalog of all open-source Python packages.</p>
 <div class="section" id="having-problems">
 <h2>Having problems?<a class="headerlink" href="#having-problems" title="Permalink to this headline">¶</a></h2>
 <p>Visit our <a class="reference internal" href="troubleshooting.html#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> page for help. If that doesn’t help, go to our
-<a class="reference external" href="https://github.com/sp-fm/fuse-framework/issues">Issues</a> page and create a new Issue. Be sure to give as much information as
+<a class="reference external" href="https://github.com/sp-95/python-framework/issues">Issues</a> page and create a new Issue. Be sure to give as much information as
 possible.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Did you find any of these instructions confusing? <a class="reference external" href="https://github.com/sp-fm/fuse-framework/blob/master/docs/tutorial.rst">Edit this file</a>
+<p>Did you find any of these instructions confusing? <a class="reference external" href="https://github.com/sp-95/python-framework/blob/master/docs/tutorial.rst">Edit this file</a>
 and submit a pull request with your improvements!</p>
 </div>
 </div>
@@ -288,37 +295,29 @@ and submit a pull request with your improvements!</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="prompts.html" class="btn btn-neutral float-right" title="Prompts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="readme.html" class="btn btn-neutral float-left" title="Python Framework" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="prompts.html" class="btn btn-neutral float-right" title="Prompts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="readme.html" class="btn btn-neutral float-left" title="Python Framework" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, Shashanka Prajapati
+        &#169; Copyright 2020, Shashanka Prajapati.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
