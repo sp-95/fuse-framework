@@ -148,9 +148,9 @@ Visit our :ref:`troubleshooting` page for help. If that doesn't help, go to our
 `Issues`_ page and create a new Issue. Be sure to give as much information as
 possible.
 
-.. _Issues: https://github.com/sp-fm/fuse-framework/issues
+.. _Issues: https://github.com/sp-95/fuse-framework/issues
 
 .. note:: Did you find any of these instructions confusing? `Edit this file`_
           and submit a pull request with your improvements!
 
-.. _Edit this file: https://github.com/sp-fm/fuse-framework/blob/master/docs/tutorial.rst
+.. _Edit this file: https://github.com/sp-95/fuse-framework/blob/master/docs/tutorial.rst

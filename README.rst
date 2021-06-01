@@ -2,15 +2,15 @@
 Python Framework
 ================
 
-.. image:: https://github.com/sp-fm/fuse-framework/workflows/Tests/badge.svg
-    :target: https://github.com/sp-fm/fuse-framework/actions?query=workflow%3ATests
+.. image:: https://github.com/sp-95/fuse-framework/workflows/Tests/badge.svg
+    :target: https://github.com/sp-95/fuse-framework/actions?query=workflow%3ATests
     :alt: Tests
 
-.. image:: https://github.com/sp-fm/fuse-framework/workflows/Documentation/badge.svg
-    :target: https://sp-fm.github.io/fuse-framework/
+.. image:: https://github.com/sp-95/fuse-framework/workflows/Documentation/badge.svg
+    :target: https://sp-95.github.io/fuse-framework/
     :alt: Documentation
 
-.. image:: https://github.com/sp-fm/fuse-framework/workflows/Release/badge.svg
+.. image:: https://github.com/sp-95/fuse-framework/workflows/Release/badge.svg
     :target: https://pypi.python.org/pypi/fuse-framework
     :alt: Release
 
@@ -20,9 +20,9 @@ Python Framework
 
 Cookiecutter_ template for Python Framework.
 
-* **Source Code**: https://github.com/sp-fm/fuse-framework
-* **Documentation**: https://sp-fm.github.io/fuse-framework/
-* **Bug Reports**: https://github.com/sp-fm/fuse-framework/issues
+* **Source Code**: https://github.com/sp-95/fuse-framework
+* **Documentation**: https://sp-95.github.io/fuse-framework/
+* **Bug Reports**: https://github.com/sp-95/fuse-framework/issues
 
 Features
 --------
@@ -89,5 +89,5 @@ project template
 .. _GitHub Actions: https://docs.github.com/en/free-pro-team@latest/actions
 .. _GitHub Pages: https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages
 .. _PyPi: https://pypi.python.org/pypi
-.. _fuse-framework tutorial: https://sp-fm.github.io/fuse-framework/tutorial.html
+.. _fuse-framework tutorial: https://sp-95.github.io/fuse-framework/tutorial.html
 .. _audreyr/cookiecutter-pypackage: https://github.com/audreyfeldroy/cookiecutter-pypackage

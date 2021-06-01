@@ -12,7 +12,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/sp-fm/fuse-framework/issues.
+Report bugs at https://github.com/sp-95/fuse-framework/issues.
 
 If you are reporting a bug, please include:
 
@@ -41,7 +41,7 @@ Submit Feedback
 ~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at
-https://github.com/sp-fm/fuse-framework/issues.
+https://github.com/sp-95/fuse-framework/issues.
 
 If you are proposing a feature:
 
@@ -59,7 +59,7 @@ ready to go.
 
    .. code-block:: console
 
-        $ git clone git@github.com:sp-fm/fuse-framework.git
+        $ git clone git@github.com:sp-95/fuse-framework.git
 
 #. Assuming you have poetry installed, you can create a new environment for your local
    development by typing:
@@ -110,7 +110,7 @@ Before you submit a pull request, check that it meets these guidelines:
    ``README.rst``.
 
 #. The pull request should work for Python 3.7 and 3.8. Check
-   https://github.com/sp-fm/fuse-framework/actions?query=workflow%3ATests
+   https://github.com/sp-95/fuse-framework/actions?query=workflow%3ATests
    and make sure that the tests pass for all supported Python versions.
 
 .. _new_test:

@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "fuse-framework"
 version = "0.1.5"
-repository = "https://github.com/sp-fm/fuse-framework"
-documentation = "https://sp-fm.github.io/fuse-framework"
+repository = "https://github.com/sp-95/fuse-framework"
+documentation = "https://sp-95.github.io/fuse-framework"
 description = "Python Framework"
 authors = ["Shashanka Prajapati <shashanka@fusemachines.com>"]
 readme = "README.rst"
@@ -45,7 +45,7 @@ sphinx-rtd-theme = "*"
 fuse = "fuse_framework.main:main"
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/sp-fm/fuse-framework/issues"
+"Bug Tracker" = "https://github.com/sp-95/fuse-framework/issues"
 
 [tool.isort]
 multi_line_output = 3
