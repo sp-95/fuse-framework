@@ -10,8 +10,13 @@ from loguru import logger
 
 
 class Main:
-    def __init__(self):
-        self.version = self._get_project_meta()["version"]
+    @property
+    def version(self):
+        try:
+            return self._version
+        except AttributeError:
+            self._version = self._get_project_meta()["version"]
+            return self._version
 
     @staticmethod
     def _get_project_meta():
