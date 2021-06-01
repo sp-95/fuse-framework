@@ -2,6 +2,29 @@
 CHANGELOG
 =========
 
+0.1.6 (2021-06-01)
+------------------
+
+Features
+~~~~~~~~
+
+* Add proper loguru configurations
+* Setup cache in GitHub Actions
+
+Fixes
+~~~~~
+
+* Version command in CLI
+
+Changes
+~~~~~~~
+
+* Changed user from sp-fm to sp-95
+* Change repo name from fuse-framework to python-framework
+* Update pre-commit versions
+* Change cookiecutter default prompts
+* Place flake8 config in tox file
+
 0.1.5 (2020-10-09)
 ------------------
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "shanx-framework"
-version = "0.1.5"
+version = "0.1.6"
 repository = "https://github.com/sp-95/python-framework"
 documentation = "https://sp-95.github.io/python-framework"
 description = "Python Framework"
