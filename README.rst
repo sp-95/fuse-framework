@@ -14,8 +14,8 @@ Python Framework
     :target: https://pypi.python.org/pypi/python-framework
     :alt: Release
 
-.. image:: https://img.shields.io/pypi/v/python-framework.svg
-    :target: https://pypi.python.org/pypi/python-framework
+.. image:: https://img.shields.io/pypi/v/shanx-framework.svg
+    :target: https://pypi.python.org/pypi/shanx-framework
     :alt: PyPi Version
 
 Cookiecutter_ template for Python Framework.
