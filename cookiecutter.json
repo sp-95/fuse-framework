@@ -1,12 +1,12 @@
 {
-  "full_name": "Shashanka Prajapati",
-  "email": "{{ cookiecutter.full_name.lower().replace(' ', '.') }}@fusemachines.com",
+  "full_name": "John Doe",
+  "email": "{{ cookiecutter.full_name.lower().replace(' ', '.') }}@gmail.com",
   "github_username": "{{ cookiecutter.full_name.lower().replace(' ', '-') }}",
   "project_name": "Python Boilerplate",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
   "version": "0.1.0",
-  "pypi_deployment": "y",
+  "pypi_deployment": "n",
   "open_source_license": [
     "MIT license",
     "BSD license",
