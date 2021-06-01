@@ -37,8 +37,8 @@ Features
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `sp-95/fuse-framework`_
+This package was created with Cookiecutter_ and the `sp-95/python-framework`_
 project template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`sp-95/fuse-framework`: https://github.com/sp-95/fuse-framework
+.. _`sp-95/python-framework`: https://github.com/sp-95/python-framework

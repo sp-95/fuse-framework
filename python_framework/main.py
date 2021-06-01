@@ -43,7 +43,7 @@ class Main:
 
         while True:
             try:
-                path = cookiecutter("gh:sp-95/fuse-framework")
+                path = cookiecutter("gh:sp-95/python-framework")
                 os.chdir(path)
                 subprocess.run(["git", "init"])
                 subprocess.run(["poetry", "install"])

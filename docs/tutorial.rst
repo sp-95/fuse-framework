@@ -16,7 +16,7 @@ Step 1: Install Python Framework
 
 .. code-block:: console
 
-    $ pip install --user fuse-framework
+    $ pip install --user python-framework
 
 
 Step 2: Initialize Your Package
@@ -26,7 +26,7 @@ Now it's time to initialize your Python package.
 
 .. code-block:: console
 
-    $ fuse init
+    $ shanx-py init
 
 You'll be asked to enter a bunch of values to set the package up. If you don't
 know what to enter, stick with the defaults.
@@ -148,9 +148,9 @@ Visit our :ref:`troubleshooting` page for help. If that doesn't help, go to our
 `Issues`_ page and create a new Issue. Be sure to give as much information as
 possible.
 
-.. _Issues: https://github.com/sp-95/fuse-framework/issues
+.. _Issues: https://github.com/sp-95/python-framework/issues
 
 .. note:: Did you find any of these instructions confusing? `Edit this file`_
           and submit a pull request with your improvements!
 
-.. _Edit this file: https://github.com/sp-95/fuse-framework/blob/master/docs/tutorial.rst
+.. _Edit this file: https://github.com/sp-95/python-framework/blob/master/docs/tutorial.rst

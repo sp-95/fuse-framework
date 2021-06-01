@@ -1,4 +1,4 @@
-.. fuse-framework documentation master file, created by
+.. python-framework documentation master file, created by
    sphinx-quickstart on Tue Sep 22 18:19:43 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.

@@ -27,7 +27,7 @@ class Config(Dynaconf):
 
 
 settings = Config(
-    envvar_prefix="FUSE",
+    envvar_prefix="SHANX",
     settings_files=[
         _CONFIG_PATH / "settings.yaml",
         _CONFIG_PATH / ".secrets.yaml",
@@ -35,6 +35,6 @@ settings = Config(
     environments=True,
 )
 
-# `envvar_prefix` = export envvars with `export FUSE_FOO=bar`.
+# `envvar_prefix` = export envvars with `export SHANX_FOO=bar`.
 # `settings_files` = Load this files in the order.
 # `environments` = Set Project environment with `export ENV_FOR_DYNACONF=development`

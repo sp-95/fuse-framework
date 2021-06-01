@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - master
-      - fuse
+      - shanx
   pull_request:
     branches:
       - master
-      - fuse
+      - shanx
 
 jobs:
   test:

@@ -5,7 +5,7 @@ from typing import Union
 from loguru import logger
 from loguru._defaults import LOGURU_FORMAT
 
-from fuse_framework.config import settings
+from python_framework.config import settings
 
 
 class InterceptHandler(logging.Handler):  # pragma: no cover

@@ -2,27 +2,27 @@
 Python Framework
 ================
 
-.. image:: https://github.com/sp-95/fuse-framework/workflows/Tests/badge.svg
-    :target: https://github.com/sp-95/fuse-framework/actions?query=workflow%3ATests
+.. image:: https://github.com/sp-95/python-framework/workflows/Tests/badge.svg
+    :target: https://github.com/sp-95/python-framework/actions?query=workflow%3ATests
     :alt: Tests
 
-.. image:: https://github.com/sp-95/fuse-framework/workflows/Documentation/badge.svg
-    :target: https://sp-95.github.io/fuse-framework/
+.. image:: https://github.com/sp-95/python-framework/workflows/Documentation/badge.svg
+    :target: https://sp-95.github.io/python-framework/
     :alt: Documentation
 
-.. image:: https://github.com/sp-95/fuse-framework/workflows/Release/badge.svg
-    :target: https://pypi.python.org/pypi/fuse-framework
+.. image:: https://github.com/sp-95/python-framework/workflows/Release/badge.svg
+    :target: https://pypi.python.org/pypi/python-framework
     :alt: Release
 
-.. image:: https://img.shields.io/pypi/v/fuse-framework.svg
-    :target: https://pypi.python.org/pypi/fuse-framework
+.. image:: https://img.shields.io/pypi/v/python-framework.svg
+    :target: https://pypi.python.org/pypi/python-framework
     :alt: PyPi Version
 
 Cookiecutter_ template for Python Framework.
 
-* **Source Code**: https://github.com/sp-95/fuse-framework
-* **Documentation**: https://sp-95.github.io/fuse-framework/
-* **Bug Reports**: https://github.com/sp-95/fuse-framework/issues
+* **Source Code**: https://github.com/sp-95/python-framework
+* **Documentation**: https://sp-95.github.io/python-framework/
+* **Bug Reports**: https://github.com/sp-95/python-framework/issues
 
 Features
 --------
@@ -51,19 +51,19 @@ Quickstart
 
    .. code-block:: console
 
-        $ pip install -U fuse-framework
+        $ pip install -U python-framework
 
 #. Initialize your project
 
    .. code-block:: console
 
-        $ fuse init
+        $ shanx-py init
 
 #. Create a repo and put it there.
 #. Generate the docs by pushing your first commit to master.
 #. Deploy your package to PyPi_ by pushing a tag and creating a release.
 
-For more details, see the `fuse-framework tutorial`_.
+For more details, see the `python-framework tutorial`_.
 
 Acknowledgment
 ---------------
@@ -89,5 +89,5 @@ project template
 .. _GitHub Actions: https://docs.github.com/en/free-pro-team@latest/actions
 .. _GitHub Pages: https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages
 .. _PyPi: https://pypi.python.org/pypi
-.. _fuse-framework tutorial: https://sp-95.github.io/fuse-framework/tutorial.html
+.. _python-framework tutorial: https://sp-95.github.io/python-framework/tutorial.html
 .. _audreyr/cookiecutter-pypackage: https://github.com/audreyfeldroy/cookiecutter-pypackage

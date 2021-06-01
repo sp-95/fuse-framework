@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "fuse-framework"
+name = "python-framework"
 version = "0.1.5"
-repository = "https://github.com/sp-95/fuse-framework"
-documentation = "https://sp-95.github.io/fuse-framework"
+repository = "https://github.com/sp-95/python-framework"
+documentation = "https://sp-95.github.io/python-framework"
 description = "Python Framework"
-authors = ["Shashanka Prajapati <shashanka@fusemachines.com>"]
+authors = ["Shashanka Prajapati <shashankap95@gmail.com>"]
 readme = "README.rst"
 license = "BSD"
 keywords = ["cookiecutter", "template", "package"]
@@ -22,7 +22,7 @@ classifiers = [
     "Topic :: Software Development",
 ]
 packages = [
-    { include = "fuse_framework" },
+    { include = "python_framework" },
     { include = "tests", format = "sdist" },
 ]
 
@@ -42,10 +42,10 @@ tox = "*"
 sphinx-rtd-theme = "*"
 
 [tool.poetry.scripts]
-fuse = "fuse_framework.main:main"
+shanx-py = "python_framework.main:main"
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/sp-95/fuse-framework/issues"
+"Bug Tracker" = "https://github.com/sp-95/python-framework/issues"
 
 [tool.isort]
 multi_line_output = 3
