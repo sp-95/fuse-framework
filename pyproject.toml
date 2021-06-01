@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python-framework"
+name = "shanx-framework"
 version = "0.1.5"
 repository = "https://github.com/sp-95/python-framework"
 documentation = "https://sp-95.github.io/python-framework"
@@ -28,6 +28,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.7"
+termcolor = "*"
 fire = "*"
 loguru = "*"
 dynaconf = "*"
